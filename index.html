@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tejas Patil — Personal Site</title>
+    <meta name="description" content="Tejas Patil — CS @ UC Davis (GPA 4.0). GenAI/ML and full‑stack engineer. Projects: I‑Care (Alzheimer’s), Cross‑Modal Fusion, HPC log transformers, image captioning." />
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --card: #111216;
+        --text: #e9ecf1;
+        --muted: #9aa3af;
+        --accent: #60a5fa;
+        --chip: #1f2937;
+        --maxw: 980px;
+      }
+      html { color-scheme: light dark; }
+      body {
+        margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+        background: linear-gradient(180deg, #0b0c10 0%, #0b0c10 60%, #0e1116 100%);
+        color: var(--text);
+      }
+      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 80px; }
+      header.site { display: grid; gap: 10px; padding: 28px 0 16px; border-bottom: 1px solid #1f2430; }
+      header h1 { font-size: clamp(28px, 3.5vw, 40px); margin: 0; letter-spacing: 0.2px; }
+      .subtitle { color: var(--muted); margin: 0; }
+      .contact a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #394150; }
+      .contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+      nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+      nav a { padding: 8px 10px; background: #0e121a; border: 1px solid #1b2230; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 14px; }
+      nav a:hover { border-color: var(--accent); color: var(--accent); }
+      section { padding: 28px 0; }
+      h2 { font-size: 20px; letter-spacing: 0.5px; margin: 0 0 14px; text-transform: uppercase; color: #c7d2fe; }
+      .card { background: var(--card); border: 1px solid #1b2230; border-radius: 16px; padding: 18px; }
+      .grid { display: grid; gap: 14px; }
+      .grid.two { grid-template-columns: 1fr; }
+      .grid.three { grid-template-columns: 1fr; }
+      @media (min-width: 800px){ .grid.two { grid-template-columns: 1fr 1fr; } .grid.three { grid-template-columns: repeat(3, 1fr); } }
+      .role { display: grid; gap: 6px; }
+      .role h3 { margin: 0; font-size: 18px; }
+      .role .meta { color: var(--muted); font-size: 14px; }
+      ul.tight { margin: 6px 0 0 22px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+      .chip { background: var(--chip); color: #d1d5db; padding: 6px 10px; border-radius: 999px; font-size: 13px; border: 1px solid #263041; }
+      .edu .school { display: grid; gap: 4px; }
+      footer { color: var(--muted); border-top: 1px solid #1f2430; padding-top: 18px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      a.btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid #1b2230; text-decoration: none; }
+      a.btn:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip to content</a>
+    <div class="wrap">
+      <header class="site">
+        <h1>Tejas Patil</h1>
+        <p class="subtitle">CS @ UC Davis (GPA 4.0) · GenAI / ML · Full‑stack</p>
+        <p class="contact">
+          <a href="tel:+15309796396" rel="me">+1 (530) 979‑6396</a> · Davis, CA ·
+          <a href="mailto:tejas.svpatil@gmail.com" rel="me">tejas.svpatil@gmail.com</a> ·
+          <a href="https://linkedin.com/in/tejas-svpatil" target="_blank" rel="me noopener">LinkedIn</a> ·
+          <a href="https://github.com/tejassvpatil" target="_blank" rel="me noopener">GitHub</a>
+        </p>
+        <nav aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="content" role="main">
+        <section id="about">
+          <h2>About</h2>
+          <div class="card">
+            <p>
+              Graduate Student Researcher at the UC Davis Alzheimer’s Disease Research Center, building the
+              <strong>I‑Care</strong> platform that enables remote caregivers to support older adults with Alzheimer’s — including real‑time chat,
+              video calls (WebRTC), adaptive reminders, and a personalized task calendar. Previously, full‑stack Software Engineer at Capgemini
+              serving a global bank on customer experience and process digitization.
+            </p>
+            <div class="chips" aria-label="Focus areas">
+              <span class="chip">GenAI &amp; LLMs</span>
+              <span class="chip">Multimodal ML</span>
+              <span class="chip">React / Vue</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">Java / SpringBoot</span>
+              <span class="chip">Azure • AZ‑900</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <div class="grid">
+            <article class="card role">
+              <h3>Graduate Student Researcher — UC Davis Alzheimer’s Disease Research Centre</h3>
+              <div class="meta">Mar 2025 – Present · React, VueJS, JavaScript, Firebase, Python, PyTorch</div>
+              <ul class="tight">
+                <li>Building and enhancing <strong>I‑Care</strong> to enable remote caregiver support with chat, WebRTC video calls, adaptive reminders, and a personalized task calendar.</li>
+                <li>Optimized Firebase backend across tasks/goals/events/access controls, reducing redundant reads/writes and improving responsiveness by <strong>30%</strong>.</li>
+                <li>Co‑developing a GenAI‑augmented system using speech, motion, and vitals data to detect cognitive decline and trigger adaptive interventions.</li>
+              </ul>
+            </article>
+
+            <article class="card role">
+              <h3>Software Engineer — Capgemini</h3>
+              <div class="meta">Aug 2021 – Aug 2023 · Java, JavaScript, VueJS, Git, NPM, REST</div>
+              <ul class="tight">
+                <li>Full‑stack developer for ABN AMRO, digitizing commercial banking processes, revamping CX, and improving conversion rates by <strong>60%</strong>.</li>
+                <li>Maintained internal tech docs on Azure DevOps Wiki; led sprint demos and scrum ceremonies; collaborated with stakeholders to shape requirements.</li>
+                <li>Drove a <strong>40%</strong> reduction in Customer Effort Score via performance optimization; delivered via Azure CI/CD in an agile SDLC.</li>
+              </ul>
+            </article>
+
+            <article class="card role">
+              <h3>Software Engineer Intern — Capgemini</h3>
+              <div class="meta">Feb 2021 – Apr 2021 · Java, SpringBoot, Angular</div>
+              <ul class="tight">
+                <li>Led a team of 3 to build a sports‑equipment e‑commerce portal on Spring.</li>
+                <li>Owned Oracle 11g database ops and Angular front‑end features.</li>
+                <li>Implemented unit/integration tests with JUnit and Mockito.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <div class="grid two">
+            <article class="card">
+              <h3>Cross‑Modal Attention Fusion for Longitudinal Alzheimer’s Trajectory Modeling</h3>
+              <p>
+                Built a tri‑modal model integrating MRI (3D‑CNN), cognitive sequences (GRU), and genetics (MLP) with cross‑modal attention,
+                achieving <strong>ROC‑AUC 0.9932</strong> and <strong>precision 0.947</strong>. Ran ablations across 7 fusion variants; found genetic‑cognitive pairing most predictive and
+                analyzed trade‑offs from modality‑specific noise and missingness.
+              </p>
+              <div class="chips">
+                <span class="chip">PyTorch</span>
+                <span class="chip">3D CNN · GRU · MLP</span>
+                <span class="chip">Cross‑modal attention</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Transformers for Failure Prediction in HPC System Logs</h3>
+              <p>
+                Developed and evaluated LLM‑style models (minGPT, BERT) for anomaly detection in HPC logs, improving prediction accuracy by
+                <strong>15%</strong> on the System 20 dataset (LANL). Implemented probabilistic inference and diverse attention mechanisms.
+              </p>
+              <div class="chips">
+                <span class="chip">BERT · minGPT</span>
+                <span class="chip">Anomaly detection</span>
+                <span class="chip">Probabilistic inference</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Deep Learning Image Captioning for Accessibility</h3>
+              <p>
+                Designed a Merge‑Model architecture combining CNN and LSTM for image features and sequence generation. Compared 5 pre‑trained CNNs
+                (VGG16/19, ResNet50, InceptionV3, Xception) and improved BLEU score.
+              </p>
+              <div class="chips">
+                <span class="chip">CNN‑LSTM</span>
+                <span class="chip">BLEU evaluation</span>
+                <span class="chip">Accessibility</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <div class="grid three">
+            <div class="card">
+              <h3>Languages</h3>
+              <p>Java, Python, JavaScript, HTML, CSS, C++, SQL</p>
+            </div>
+            <div class="card">
+              <h3>Frameworks &amp; Libraries</h3>
+              <p>PyTorch, VueJS, React, SpringBoot, Keras, NumPy, Pandas</p>
+            </div>
+            <div class="card">
+              <h3>Databases</h3>
+              <p>Oracle, MongoDB, MySQL, SQLite</p>
+            </div>
+            <div class="card">
+              <h3>GenAI Tools &amp; LLMs</h3>
+              <p>Hugging Face, GPT, BERT, LangChain, Prompt Engineering, RAG</p>
+            </div>
+            <div class="card">
+              <h3>DevOps &amp; Tools</h3>
+              <p>Azure (Microsoft Certified AZ‑900), Docker, Kubernetes, Git, Postman, Eclipse</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="edu">
+          <h2>Education</h2>
+          <div class="grid two">
+            <div class="card school">
+              <h3>University of California, Davis — M.S. Computer Science</h3>
+              <p class="meta">Sep 2023 – Present · GPA: 4.0</p>
+              <p>Relevant Courses: Machine Learning &amp; Discovery, Advanced Deep Learning, Vision &amp; Language Research</p>
+            </div>
+            <div class="card school">
+              <h3>Savitribai Phule Pune University — B.E. Computer Engineering</h3>
+              <p class="meta">Jul 2017 – Jul 2021 · GPA: 3.74</p>
+              <p>Relevant Courses: Engineering Mathematics, Discrete Mathematics, Data Structures &amp; Algorithms</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <div class="card">
+            <p>Open to software engineering roles (AI/ML, full‑stack) and research collaborations. Best way to reach me is email.</p>
+            <p>
+              <a class="btn" href="mailto:tejas.svpatil@gmail.com">Email Tejas</a>
+              <a class="btn" href="https://linkedin.com/in/tejas-svpatil" target="_blank" rel="noopener">Connect on LinkedIn</a>
+              <a class="btn" href="https://github.com/tejassvpatil" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <small>© <span id="year"></span> Tejas Patil · Built with HTML &amp; CSS · Hosted on GitHub Pages</small>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tejas Patil",
+      "jobTitle": "Graduate Student Researcher",
+      "email": "mailto:tejas.svpatil@gmail.com",
+      "telephone": "+1-530-979-6396",
+      "address": {"@type": "PostalAddress", "addressLocality": "Davis", "addressRegion": "CA", "addressCountry": "US"},
+      "affiliation": {"@type": "Organization", "name": "UC Davis Alzheimer’s Disease Research Centre"},
+      "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of California, Davis"},{"@type": "CollegeOrUniversity", "name": "Savitribai Phule Pune University"}],
+      "sameAs": [
+        "https://linkedin.com/in/tejas-svpatil",
+        "https://github.com/tejassvpatil"
+      ]
+    }
+    </script>
+  </body>
+</html>
