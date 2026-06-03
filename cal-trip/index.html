@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northern California Road Trip</title>
+  <link rel="preconnect" href="https://commons.wikimedia.org" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" />
+  <style>
+    :root {
+      --navy:#082b4c; --blue:#176b98; --teal:#2d9c9a; --forest:#2d6a4f; --gold:#f2b84b;
+      --paper:#fbfbf7; --ink:#1b2937; --muted:#657487; --line:#dbe5ec;
+      --shadow:0 18px 45px rgba(8,43,76,.12);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(45,156,154,.11), transparent 34rem),
+        radial-gradient(circle at top right, rgba(242,184,75,.16), transparent 28rem),
+        var(--paper);
+      line-height:1.5;
+    }
+    a { color:inherit; text-decoration:none; }
+    .page { max-width:1240px; margin:auto; padding:18px; }
+    .nav {
+      position:sticky; top:14px; z-index:40; display:flex; justify-content:space-between; align-items:center; gap:16px;
+      padding:14px 20px; border-radius:28px; background:rgba(255,255,255,.86);
+      border:1px solid rgba(255,255,255,.8); backdrop-filter:blur(18px); box-shadow:0 12px 30px rgba(8,43,76,.08);
+    }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; color:var(--navy); }
+    .brand-mark {
+      width:44px; height:44px; display:grid; place-items:center; border-radius:50%;
+      background:linear-gradient(135deg,#e4f5ff,#fef0c7); font-size:24px;
+    }
+    .nav-links { display:flex; gap:8px; flex-wrap:wrap; }
+    .nav-links a { padding:9px 13px; border-radius:999px; font-size:14px; font-weight:800; color:var(--navy); }
+    .nav-links a:hover { background:#edf7fb; }
+
+    .hero {
+      position:relative; overflow:hidden; min-height:620px; margin-top:18px; border-radius:38px; box-shadow:var(--shadow);
+      background:
+        linear-gradient(90deg, rgba(6,28,52,.70), rgba(6,28,52,.35) 45%, rgba(6,28,52,.12)),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Tunnel_View%2C_Yosemite_Valley%2C_Yosemite_NP_-_Diliff.jpg?width=1800') center/cover no-repeat;
+      color:#fff;
+    }
+    .hero::after {
+      content:""; position:absolute; inset:auto 0 0 0; height:160px;
+      background:linear-gradient(180deg, transparent, rgba(251,251,247,.95) 72%, var(--paper));
+    }
+    .hero-content { position:relative; z-index:2; max-width:780px; padding:82px 54px 76px; }
+    .eyebrow {
+      display:inline-flex; gap:8px; padding:8px 13px; border-radius:999px;
+      background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(12px);
+      font-size:13px; font-weight:900; text-transform:uppercase; letter-spacing:.08em;
+    }
+    h1 {
+      margin:18px 0 8px; font-family:Georgia, "Times New Roman", serif;
+      font-size:72px; line-height:.9; letter-spacing:0;
+    }
+    .subtitle { margin:0; font-size:28px; font-weight:900; color:#dff6ff; }
+    .micro { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 24px; font-size:14px; }
+    .micro span {
+      display:inline-flex; gap:7px; padding:8px 11px; border-radius:999px;
+      background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.18); backdrop-filter:blur(10px);
+      font-weight:760;
+    }
+    .summary {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:13px; margin-top:30px;
+    }
+    .summary-card {
+      min-height:118px; padding:18px; border-radius:22px; background:rgba(255,255,255,.9); color:var(--navy);
+      box-shadow:0 14px 30px rgba(8,43,76,.14);
+    }
+    .summary-card .icon { font-size:28px; }
+    .summary-card strong { display:block; font-size:18px; }
+    .summary-card small { display:block; color:#496173; font-weight:750; }
+    .hero-note { max-width:750px; margin-top:24px; font-size:18px; color:rgba(255,255,255,.94); }
+
+    section { scroll-margin-top:100px; }
+    .main { display:grid; grid-template-columns:1.78fr .94fr; gap:24px; margin-top:34px; align-items:start; }
+    .kicker { margin:0 0 7px; color:var(--teal); font-size:13px; font-weight:950; letter-spacing:.12em; text-transform:uppercase; }
+    .section-title {
+      margin:0 0 18px; color:var(--navy); font-family:Georgia, "Times New Roman", serif;
+      font-size:42px; letter-spacing:0;
+    }
+
+    .timeline { position:relative; display:grid; gap:18px; padding-left:34px; }
+    .timeline::before {
+      content:""; position:absolute; left:13px; top:22px; bottom:22px; width:2px;
+      background:repeating-linear-gradient(to bottom, rgba(23,107,152,.44) 0 7px, transparent 7px 15px);
+    }
+
+    .day {
+      position:relative; display:grid; grid-template-columns:220px 1fr; gap:22px;
+      padding:18px; border:1px solid var(--line); border-radius:28px; background:rgba(255,255,255,.92);
+      box-shadow:0 14px 34px rgba(8,43,76,.08);
+    }
+    .num {
+      position:absolute; left:-44px; top:32px; width:32px; height:32px; display:grid; place-items:center;
+      border-radius:50%; background:var(--navy); color:#fff; font-weight:950; box-shadow:0 0 0 5px var(--paper);
+    }
+    .photo {
+      min-height:260px; border-radius:22px; background-size:cover; background-position:center;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+      filter:saturate(1.06) contrast(1.04);
+      background-repeat:no-repeat;
+    }
+    .photo-yosemite { background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tunnel_View%2C_Yosemite_Valley%2C_Yosemite_NP_-_Diliff.jpg?width=1200'); }
+    .photo-sf { background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Gate_Bridge_as_seen_from_Battery_East.jpg?width=1200'); }
+    .photo-coast { background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Armstrong_Redwoods_State_Natural_Reserve_-_02.jpg?width=1200'); background-position:center 42%; }
+    .photo-tahoe { background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Emerald_Bay%2C_Lake_Tahoe%2C_Nevada_%2821560966962%29.jpg?width=1200'); }
+
+    .day-top { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; margin-bottom:8px; }
+    .date { color:#31566d; font-size:14px; font-weight:950; }
+    .day-title {
+      margin:2px 0 8px; color:var(--navy); font-family:Georgia, "Times New Roman", serif;
+      font-size:34px; line-height:1; letter-spacing:0;
+    }
+    .weather {
+      flex:0 0 auto; padding:10px 12px; border-radius:17px; border:1px solid rgba(242,184,75,.55);
+      background:#fff8e8; color:#633e00; font-size:13px; font-weight:950; text-align:right;
+    }
+    .weather.blue { border-color:rgba(23,107,152,.3); background:#edf8ff; color:#134969; }
+    .weather.teal { border-color:rgba(45,156,154,.3); background:#eefcf8; color:#18645e; }
+
+    .route,.time,.miles {
+      display:flex; gap:8px; margin:7px 0; color:#33485a; font-size:15px; font-weight:760;
+    }
+    .miles strong { color:var(--navy); }
+    .details { display:grid; grid-template-columns:1.35fr .95fr; gap:18px; margin-top:15px; }
+    .label { margin:0 0 6px; color:var(--forest); font-size:13px; font-weight:950; letter-spacing:.05em; text-transform:uppercase; }
+    .highlights { columns:2; padding-left:18px; margin:0; color:#1c3345; font-size:14px; }
+    .highlights li { break-inside:avoid; margin:3px 0; }
+    .food { border-left:1px solid #c9dccd; padding-left:14px; color:#415568; font-size:14px; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
+    .pill {
+      display:inline-flex; gap:7px; padding:8px 12px; border-radius:999px; border:1px solid #b9d8be;
+      background:#edf8e9; color:#27593a; font-size:13px; font-weight:850;
+    }
+    .callout {
+      margin-top:13px; padding:12px 14px; border-radius:18px; border:1px solid rgba(23,107,152,.18);
+      background:#f2f9ff; color:#17608a; font-size:14px; font-weight:800;
+    }
+
+    .sidebar { position:sticky; top:96px; display:grid; gap:18px; }
+    .side {
+      border:1px solid #d6e6d8; border-radius:28px; background:linear-gradient(180deg,#fbfff7,#edf7eb);
+      box-shadow:0 14px 34px rgba(8,43,76,.08); overflow:hidden;
+    }
+    .side-inner { padding:26px; }
+    .side h3 {
+      margin:0 0 17px; color:var(--forest); font-family:Georgia, "Times New Roman", serif;
+      font-size:31px; letter-spacing:0;
+    }
+    .budget-row {
+      display:grid; grid-template-columns:34px 1fr auto; gap:12px; align-items:center;
+      padding:11px 0; border-bottom:1px solid rgba(45,106,79,.16); font-size:14px;
+    }
+    .budget-row:first-child { padding-top:0; }
+    .budget-row strong { color:var(--navy); font-size:15px; text-align:right; }
+    .round { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:#dff0d6; font-size:18px; }
+    .total {
+      margin-top:12px; padding:15px; border:1px solid #b8d18d; border-radius:19px;
+      background:#ecf7d5; color:var(--forest); font-weight:950; display:flex; justify-content:space-between; gap:14px;
+    }
+    .warning-total { background:#fff0d6; border-color:#f3c16a; color:#6b4300; }
+    .muted { margin:12px 0 0; color:#748071; font-size:13px; font-style:italic; }
+
+    .check-list { display:grid; gap:12px; padding:0; margin:0; list-style:none; }
+    .check-list li { display:grid; grid-template-columns:30px 1fr; gap:10px; color:#284153; font-size:14px; }
+    .check { display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--forest); color:white; font-weight:950; }
+
+    .swap {
+      min-height:225px; border-radius:28px; overflow:hidden; border:1px solid #cde1ef;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.75) 50%, rgba(255,255,255,.15)),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Coast_of_Point_Reyes_%28TK13%29.JPG?width=1200') center/cover no-repeat;
+      box-shadow:0 14px 34px rgba(8,43,76,.08); padding:25px;
+    }
+    .swap h3,.swap p { max-width:300px; }
+    .swap h3 {
+      margin:0 0 8px; color:var(--navy); font-family:Georgia, "Times New Roman", serif;
+      font-size:30px; line-height:1;
+    }
+    .swap p { margin:0; color:#33485a; font-size:14px; font-weight:750; }
+
+    .budget-detail,.packing { margin-top:34px; }
+    .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .mini,.pack {
+      padding:20px; border-radius:24px; border:1px solid var(--line); background:rgba(255,255,255,.9);
+      box-shadow:0 12px 28px rgba(8,43,76,.07);
+    }
+    .mini strong,.pack h3 { display:block; color:var(--navy); font-size:17px; margin-bottom:7px; }
+    .mini span,.pack li { color:var(--muted); font-size:14px; font-weight:750; }
+    .pack ul { margin:0; padding-left:18px; }
+
+    .cost-table {
+      overflow:hidden; border:1px solid var(--line); border-radius:26px; background:white;
+      box-shadow:0 12px 28px rgba(8,43,76,.07);
+    }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th,td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#f1f9fc; color:var(--navy); font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
+    tr:last-child td { border-bottom:0; }
+    .right { text-align:right !important; font-weight:900; color:var(--navy); }
+
+    footer {
+      margin:40px 0 16px; padding:28px; border-radius:30px;
+      background:linear-gradient(135deg, rgba(8,43,76,.96), rgba(5,67,102,.96));
+      color:white; display:flex; justify-content:space-between; align-items:center; gap:20px; box-shadow:var(--shadow);
+    }
+    footer p { margin:0; color:rgba(255,255,255,.78); font-size:13px; }
+    .footer-title { font-family:Georgia, "Times New Roman", serif; font-size:28px; font-style:italic; }
+    .source { margin-top:9px; color:rgba(255,255,255,.6); font-size:12px; }
+    .source a { color:rgba(255,255,255,.72); text-decoration:underline; text-underline-offset:3px; }
+
+    @media (max-width:1000px) {
+      .summary,.grid4 { grid-template-columns:repeat(2,1fr); }
+      .main { grid-template-columns:1fr; }
+      .sidebar { position:static; }
+      .day { grid-template-columns:180px 1fr; }
+      .grid3 { grid-template-columns:1fr; }
+    }
+    @media (max-width:720px) {
+      .page { padding:10px; }
+      .nav { position:relative; top:0; flex-direction:column; align-items:flex-start; }
+      .hero { min-height:auto; border-radius:28px; }
+      .hero-content { padding:50px 22px 56px; }
+      h1 { font-size:52px; }
+      .subtitle { font-size:22px; }
+      .section-title { font-size:34px; }
+      .summary,.grid4 { grid-template-columns:1fr; }
+      .timeline { padding-left:0; }
+      .timeline::before,.num { display:none; }
+      .day { grid-template-columns:1fr; }
+      .photo { min-height:220px; }
+      .day-top,.details { display:grid; grid-template-columns:1fr; }
+      .weather { text-align:left; }
+      .highlights { columns:1; }
+      footer { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <a href="#overview" class="brand"><span class="brand-mark">🌲</span><span>Northern California Road Trip</span></a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#quick-routes">Routes</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#budget">Budget</a>
+        <a href="#notes">Notes</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="overview">
+      <div class="hero-content">
+        <span class="eyebrow">Road trip planner</span>
+        <h1>Northern California<br>Road Trip</h1>
+        <p class="subtitle">Davis Base Camp • June 12–15, 2026</p>
+        <div class="micro">
+          <span>📅 June 10–11: Davis + commencement</span>
+          <span>🚗 Car pickup: evening of June 11</span>
+          <span>🚙 Vehicle: Toyota Corolla</span>
+        </div>
+        <div class="summary">
+          <div class="summary-card"><span class="icon">📍</span><strong>Base: Davis</strong><small>Return point each night</small></div>
+          <div class="summary-card"><span class="icon">🗓️</span><strong>4 travel days</strong><small>June 12–15</small></div>
+          <div class="summary-card"><span class="icon">🛣️</span><strong>~970 total miles</strong><small>Across all 4 days</small></div>
+          <div class="summary-card"><span class="icon">💵</span><strong>Buffered budget</strong><small>Includes insurance + food</small></div>
+        </div>
+        <p class="hero-note">Planned to balance cooler coastal days, mild San Francisco weather, and long mountain drives with generous buffer time, food stops, parking, tickets, tolls, and rental-car costs.</p>
+      </div>
+    </header>
+
+
+    <section class="route-panel" id="quick-routes">
+      <p class="kicker">Quick route buttons</p>
+      <h2 class="section-title">Open each day in Google Maps</h2>
+      <div class="route-button-grid">
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🗺️ Day 1: Yosemite</strong>
+          <span>~340 miles • Davis round trip</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🌉 Day 2: San Francisco</strong>
+          <span>~170 miles • Alcatraz + Pier 39 + Golden Gate</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🌲 Day 3: Redwoods + Coast</strong>
+          <span>~270 miles • Armstrong Redwoods + Bodega Bay + Point Reyes</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🏔️ Day 4: Lake Tahoe</strong>
+          <span>~220 miles • Emerald Bay + South Lake Tahoe</span>
+        </a>
+      </div>
+    </section>
+
+
+    <main class="main">
+      <section id="itinerary">
+        <p class="kicker">Optimized route plan</p>
+        <h2 class="section-title">Four-day itinerary</h2>
+
+        <div class="timeline">
+          <article class="day">
+            <div class="num">1</div>
+            <div class="photo photo-yosemite" aria-label="Yosemite Valley photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 1 — Friday, June 12</div>
+                  <h2 class="day-title">Yosemite Day Trip</h2>
+                </div>
+                <div class="weather">☀️ Yosemite Valley:<br>83°F / 52°F • Sunny</div>
+              </div>
+              <div class="route">📍 <span>Davis → Yosemite Valley → Davis</span></div>
+              <div class="time">🕘 <span>Leave 5:30 AM • Return around 8:30–9:00 PM</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~340 miles round trip</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Yosemite route</a>
+                <a class="map-btn secondary" href="https://www.nps.gov/yose/planyourvisit/fees.htm" target="_blank" rel="noopener">🎟️ Yosemite fees</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">5:30 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Keep breakfast, water, and snacks packed before departure.</span></li>
+                  <li><span class="stop-time">7:30 AM</span><span class="stop-text"><strong>Oakdale / Groveland quick stop.</strong> Coffee, restroom, top off gas if needed.</span></li>
+                  <li><span class="stop-time">10:00 AM</span><span class="stop-text"><strong>Enter Yosemite Valley area.</strong> Start with Tunnel View if parking is manageable.</span></li>
+                  <li><span class="stop-time">10:30 AM</span><span class="stop-text"><strong>Tunnel View + Bridalveil Fall.</strong> Short photo stops; do not overpack the first half.</span></li>
+                  <li><span class="stop-time">12:15 PM</span><span class="stop-text"><strong>Lunch in Yosemite Village.</strong> Use this as restroom + reset time.</span></li>
+                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Lower Yosemite Fall walk.</strong> Easy scenic walk if everyone has energy.</span></li>
+                  <li><span class="stop-time">3:30 PM</span><span class="stop-text"><strong>El Capitan Meadow.</strong> Relaxed final Valley stop before driving out.</span></li>
+                  <li><span class="stop-time">4:45 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner on the way back, likely Oakdale / Manteca side.</span></li>
+                  <li><span class="stop-time">8:30–9 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Early sleep after the longest day.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Tunnel View</li>
+                    <li>Bridalveil Fall</li>
+                    <li>Yosemite Village</li>
+                    <li>Lower Yosemite Fall</li>
+                    <li>El Capitan Meadow</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Quick breakfast packed / Oakdale stop • lunch in Yosemite Village • dinner on return
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">⭐ Best because Yosemite is coolest on Friday</span>
+              </div>
+              <div class="callout">⛰️ Optional upgrade: stay 1 night near El Portal or Oakhurst if you want a more relaxed pace.</div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">2</div>
+            <div class="photo photo-sf" aria-label="Golden Gate Bridge photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 2 — Saturday, June 13</div>
+                  <h2 class="day-title">San Francisco Icons</h2>
+                </div>
+                <div class="weather blue">🌤️ San Francisco:<br>71°F / 57°F • Sun + clouds</div>
+              </div>
+              <div class="route">📍 <span>Davis → Alcatraz / Fisherman’s Wharf / Pier 39 / Golden Gate Bridge → Davis</span></div>
+              <div class="time">🕘 <span>Leave 7:00 AM • Return around 9:00 PM</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~170 miles round trip</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open SF route</a>
+                <a class="map-btn secondary" href="https://www.cityexperiences.com/san-francisco/city-cruises/alcatraz/tour-options/" target="_blank" rel="noopener">🎟️ Alcatraz tickets</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Aim to beat Bay Area traffic and parking stress.</span></li>
+                  <li><span class="stop-time">8:45 AM</span><span class="stop-text"><strong>Arrive near Pier 33.</strong> Park once; do not move the car around the wharf area.</span></li>
+                  <li><span class="stop-time">9:30 AM</span><span class="stop-text"><strong>Alcatraz ferry / tour.</strong> Morning tour is best before the waterfront gets crowded.</span></li>
+                  <li><span class="stop-time">12:15 PM</span><span class="stop-text"><strong>Fisherman’s Wharf lunch.</strong> Casual lunch and restroom break.</span></li>
+                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Pier 39.</strong> Sea lions, shops, quick photos.</span></li>
+                  <li><span class="stop-time">3:00 PM</span><span class="stop-text"><strong>Ghirardelli / waterfront stroll.</strong> Keep this flexible depending on energy.</span></li>
+                  <li><span class="stop-time">4:30 PM</span><span class="stop-text"><strong>Golden Gate Bridge viewpoint.</strong> Use Battery Spencer or Vista Point depending on fog/parking.</span></li>
+                  <li><span class="stop-time">6:00 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner either before leaving SF or back near Davis.</span></li>
+                  <li><span class="stop-time">8:30–9 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Keep valuables hidden in SF throughout the day.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Morning Alcatraz tour</li>
+                    <li>Pier 39 sea lions</li>
+                    <li>Fisherman’s Wharf lunch</li>
+                    <li>Ghirardelli / waterfront stroll</li>
+                    <li>Golden Gate Bridge viewpoint</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Brunch or early lunch at Fisherman’s Wharf • snacks at Pier 39 • dinner back in Davis
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">⭐ Mild city weather = perfect SF day</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">3</div>
+            <div class="photo photo-coast" aria-label="Point Reyes coast photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 3 — Sunday, June 14</div>
+                  <h2 class="day-title">North Bay Redwoods + Coast</h2>
+                </div>
+                <div class="weather teal">🌤️ Armstrong / Bodega Bay:<br>Redwoods + cool coast</div>
+              </div>
+              <div class="route">📍 <span>Davis → Armstrong Redwoods → Bodega Bay → Point Reyes → Davis</span></div>
+              <div class="time">🕘 <span>Leave 7:00–7:30 AM • Return around 8:30 PM</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~270 miles round trip</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Armstrong + Coast route</a>
+                <a class="map-btn secondary" href="https://www.parks.ca.gov/?page_id=450" target="_blank" rel="noopener">🌲 Armstrong park info</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Bring layers; the redwood grove and coast will feel much cooler than Davis.</span></li>
+                  <li><span class="stop-time">9:15–9:30 AM</span><span class="stop-text"><strong>Arrive at Armstrong Redwoods.</strong> Park, restroom, and begin the main grove walk.</span></li>
+                  <li><span class="stop-time">9:30–11:15 AM</span><span class="stop-text"><strong>Pioneer Nature Trail / main grove.</strong> Easy redwood walk; look for Colonel Armstrong Tree and Parson Jones Tree.</span></li>
+                  <li><span class="stop-time">11:15 AM</span><span class="stop-text"><strong>Drive toward Bodega Bay.</strong> Scenic Russian River / Sonoma County drive with buffer.</span></li>
+                  <li><span class="stop-time">12:30–1:30 PM</span><span class="stop-text"><strong>Lunch near Bodega Bay or Guerneville.</strong> Keep this flexible based on hunger and parking.</span></li>
+                  <li><span class="stop-time">1:45–3:00 PM</span><span class="stop-text"><strong>Bodega Bay coast.</strong> Coastal views, short walk, coffee/snack, optional seafood/chowder.</span></li>
+                  <li><span class="stop-time">3:00–4:15 PM</span><span class="stop-text"><strong>Drive toward Point Reyes Station.</strong> Treat Point Reyes as the flexible add-on if the day runs long.</span></li>
+                  <li><span class="stop-time">4:15–5:30 PM</span><span class="stop-text"><strong>Point Reyes Station / one scenic stop.</strong> Easy final stop before heading back.</span></li>
+                  <li><span class="stop-time">6:00 PM</span><span class="stop-text"><strong>Start return to Davis.</strong> Dinner/snack stop on the way if needed.</span></li>
+                  <li><span class="stop-time">8:30–9:30 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Longer than the Muir Woods version, but more impressive redwoods.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Armstrong Redwoods main grove</li>
+                    <li>Pioneer Nature Trail</li>
+                    <li>Colonel Armstrong Tree</li>
+                    <li>Bodega Bay coastal views</li>
+                    <li>Point Reyes Station</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Coffee stop in Santa Rosa/Guerneville • lunch near Bodega Bay • Point Reyes/Sebastopol snack or dinner on return
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">🌲 Biggest redwood experience on the trip</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">4</div>
+            <div class="photo photo-tahoe" aria-label="Emerald Bay Lake Tahoe photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 4 — Monday, June 15</div>
+                  <h2 class="day-title">Lake Tahoe Escape</h2>
+                </div>
+                <div class="weather">☀️ South Lake Tahoe:<br>82°F / 43°F • Mostly sunny</div>
+              </div>
+              <div class="route">📍 <span>Davis → Emerald Bay → South Lake Tahoe → Davis</span></div>
+              <div class="time">🕘 <span>Leave 7:00 AM • Return around 8:00 PM</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~220 miles round trip</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Tahoe route</a>
+                <a class="map-btn secondary" href="https://www.parks.ca.gov/?page_id=506" target="_blank" rel="noopener">🏞️ Emerald Bay info</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Check road/traffic before committing to the mountain drive.</span></li>
+                  <li><span class="stop-time">8:15 AM</span><span class="stop-text"><strong>Placerville breakfast stop.</strong> Coffee, restroom, snacks for the lake.</span></li>
+                  <li><span class="stop-time">10:30 AM</span><span class="stop-text"><strong>Emerald Bay overlook.</strong> Main photo stop; parking may be tight even on weekdays.</span></li>
+                  <li><span class="stop-time">12:00 PM</span><span class="stop-text"><strong>South Lake Tahoe lunch.</strong> Keep it casual near the lake or Heavenly Village.</span></li>
+                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Lakeside walk / beach time.</strong> Choose a low-effort lake stop instead of overdriving.</span></li>
+                  <li><span class="stop-time">3:30 PM</span><span class="stop-text"><strong>Heavenly Village or scenic drive.</strong> Flexible final activity based on energy.</span></li>
+                  <li><span class="stop-time">5:00 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner on the way back if needed.</span></li>
+                  <li><span class="stop-time">8:00 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Return car prep / fuel plan if needed.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Emerald Bay overlook</li>
+                    <li>Lakeside walk</li>
+                    <li>Heavenly Village or beach time</li>
+                    <li>Scenic return drive</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Breakfast stop in Placerville • lunch by the lake • dinner on the way back
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">⭐ Weekday Tahoe = lighter traffic</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="side" id="budget">
+          <div class="side-inner">
+            <h3>Buffered Trip Budget</h3>
+            <div class="budget-row"><span class="round">🚙</span><span>Rental base + taxes/fees</span><strong>$320–$370</strong></div>
+            <div class="budget-row"><span class="round">🛡️</span><span>Optional rental protection / insurance buffer</span><strong>$120–$180</strong></div>
+            <div class="budget-row"><span class="round">⛽</span><span>Gas with mountain/coast buffer</span><strong>~$200</strong></div>
+            <div class="budget-row"><span class="round">🌉</span><span>Bridge toll buffer</span><strong>$45–$65</strong></div>
+            <div class="budget-row"><span class="round">🅿️</span><span>Parking + park fees</span><strong>$80–$120</strong></div>
+            <div class="budget-row"><span class="round">🎟️</span><span>Tickets + entrance fees, 3 adults</span><strong>$200–$230</strong></div>
+            <div class="budget-row"><span class="round">🍽️</span><span>Food + snacks, 3 adults</span><strong>$700–$900</strong></div>
+            <div class="total"><span>Generous expected total</span><span>$1,650–$2,050</span></div>
+            <div class="total warning-total"><span>Possible Yosemite non-U.S. resident fee add-on</span><span>+$0–$300</span></div>
+            <p class="muted">Assumes 3 adults, 4 rental days, Toyota Corolla, Davis as base, and no overnight hotel. Insurance/protection pricing varies by Enterprise branch and selected products.</p>
+          </div>
+        </section>
+
+        <section class="side" id="notes">
+          <div class="side-inner">
+            <h3>Important Notes</h3>
+            <ul class="check-list">
+              <li><span class="check">✓</span><span>Book Alcatraz tickets early — official provider is Alcatraz City Cruises.</span></li>
+              <li><span class="check">✓</span><span>Armstrong Redwoods has a $10 vehicle day-use/parking fee; no Muir Woods reservation needed.</span></li>
+              <li><span class="check">✓</span><span>Bring layers: coast and San Francisco will feel much cooler than Davis.</span></li>
+              <li><span class="check">✓</span><span>Pack water, sunscreen, and snacks for Yosemite and Tahoe days.</span></li>
+              <li><span class="check">✓</span><span>17-Mile Drive / Monterey is beautiful but too ambitious as an add-on. Use it as a swap day.</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="swap">
+          <h3>If you really want Highway 1 / 17-Mile Drive</h3>
+          <p>Best used as a replacement for Tahoe or the North Bay day, not added on top of this itinerary.</p>
+        </section>
+      </aside>
+    </main>
+
+    <section class="budget-detail">
+      <p class="kicker">Generous estimate</p>
+      <h2 class="section-title">Detailed cost model</h2>
+      <div class="cost-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What is included</th>
+              <th class="right">Buffered estimate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Rental car</td><td>$65–$70/day for 4 days, plus a tax/fee buffer</td><td class="right">$320–$370</td></tr>
+            <tr><td>Car insurance / protection</td><td>Optional Enterprise protection products such as damage waiver or liability protection; exact price varies by branch and vehicle</td><td class="right">$120–$180</td></tr>
+            <tr><td>Gas</td><td>~970 miles, ~35 mpg Corolla, $5.993/gal California regular average, plus buffer</td><td class="right">~$200</td></tr>
+            <tr><td>Tolls</td><td>Bay Area bridge crossings including a generous Golden Gate / Bay Bridge / route-choice buffer</td><td class="right">$45–$65</td></tr>
+            <tr><td>Parking + park fees</td><td>SF waterfront parking, Armstrong Redwoods vehicle day-use/parking, Emerald Bay/Tahoe parking, and misc. parking</td><td class="right">$80–$120</td></tr>
+            <tr><td>Tickets + entrances</td><td>Alcatraz Day Tour for 3 adults, Yosemite vehicle entrance, Armstrong Redwoods vehicle fee, and other entrance buffers</td><td class="right">$200–$230</td></tr>
+            <tr><td>Food + snacks</td><td>3 adults × 4 days, assuming casual meals out, snacks, coffee, and some buffer</td><td class="right">$700–$900</td></tr>
+            <tr><td><strong>Estimated total</strong></td><td><strong>Practical high-buffer trip total without hotel</strong></td><td class="right">$1,650–$2,050</td></tr>
+            <tr><td><strong>Possible add-on</strong></td><td><strong>If Yosemite non-U.S. resident entrance surcharge applies, verify before travel</strong></td><td class="right">+$0–$300</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="budget-detail">
+      <p class="kicker">Route logic</p>
+      <h2 class="section-title">Mileage + route snapshot</h2>
+      <div class="grid4">
+        <div class="mini"><strong>Day 1: Yosemite</strong><span>~340 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 2: San Francisco</strong><span>~170 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 3: Armstrong + Coast</strong><span>~270 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 4: Tahoe</strong><span>~220 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+      </div>
+    </section>
+
+    <section class="packing">
+      <p class="kicker">Road trip readiness</p>
+      <h2 class="section-title">Pack smart</h2>
+      <div class="grid3">
+        <div class="pack">
+          <h3>Car essentials</h3>
+          <ul>
+            <li>Phone mount + charging cable</li>
+            <li>Offline Google Maps</li>
+            <li>Small cooler with water</li>
+            <li>Cash/card for parking and tolls</li>
+          </ul>
+        </div>
+        <div class="pack">
+          <h3>Weather layers</h3>
+          <ul>
+            <li>Light jackets for SF/coast</li>
+            <li>Hat and sunscreen for Yosemite/Tahoe</li>
+            <li>Comfortable walking shoes</li>
+            <li>Extra layer for Tahoe evening</li>
+          </ul>
+        </div>
+        <div class="pack">
+          <h3>Comfort buffer</h3>
+          <ul>
+            <li>Snacks for long drives</li>
+            <li>Motion sickness meds if needed</li>
+            <li>Restroom/coffee stops</li>
+            <li>No valuables visible in the car in SF</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <div class="footer-title">Northern California Road Trip</div>
+        <p>Make memories. Take the scenic way.</p>
+        <p class="source">Updated with Armstrong Redwoods, crisp realistic photos, Google Maps buttons, daily mileage estimates, and stop-by-stop timelines.</p>
+        <p class="source">Photo credits: Wikimedia Commons / Creative Commons: <a href="https://commons.wikimedia.org/wiki/File:Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg" target="_blank" rel="noopener">Yosemite</a>, <a href="https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg" target="_blank" rel="noopener">Golden Gate</a>, <a href="https://commons.wikimedia.org/wiki/File:Armstrong_Redwoods_State_Natural_Reserve_-_02.jpg" target="_blank" rel="noopener">Armstrong Redwoods</a>, <a href="https://commons.wikimedia.org/wiki/File:Emerald_Bay,_Lake_Tahoe,_Nevada_(21560966962).jpg" target="_blank" rel="noopener">Emerald Bay</a>, <a href="https://commons.wikimedia.org/wiki/File:Coast_of_Point_Reyes_(TK13).JPG" target="_blank" rel="noopener">Point Reyes</a>.</p>
+      </div>
+      <div aria-hidden="true">📷 &nbsp; 🧭 &nbsp; 🚗 &nbsp; 🌉</div>
+    </footer>
+  </div>
+</body>
+</html>
