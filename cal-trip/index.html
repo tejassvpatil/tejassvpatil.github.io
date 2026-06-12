@@ -188,7 +188,7 @@
     .swap p { margin:0; color:#33485a; font-size:14px; font-weight:750; }
 
     .budget-detail,.packing { margin-top:34px; }
-    .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .grid4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
     .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
     .mini,.pack {
       padding:20px; border-radius:24px; border:1px solid var(--line); background:rgba(255,255,255,.9);
@@ -262,19 +262,19 @@
       <div class="hero-content">
         <span class="eyebrow">Road trip planner</span>
         <h1>Northern California<br>Road Trip</h1>
-        <p class="subtitle">Davis Base Camp • June 12–15, 2026</p>
+        <p class="subtitle">Updated Live Plan • June 12–16, 2026</p>
         <div class="micro">
-          <span>📅 June 10–11: Davis + commencement</span>
-          <span>🚗 Car pickup: evening of June 11</span>
+          <span>📅 Today: leave Davis at 12:40 PM</span>
+          <span>🏨 Yosemite overnight: June 14</span>
           <span>🚙 Vehicle: Toyota Corolla</span>
         </div>
         <div class="summary">
-          <div class="summary-card"><span class="icon">📍</span><strong>Base: Davis</strong><small>Return point each night</small></div>
-          <div class="summary-card"><span class="icon">🗓️</span><strong>4 travel days</strong><small>June 12–15</small></div>
-          <div class="summary-card"><span class="icon">🛣️</span><strong>~970 total miles</strong><small>Across all 4 days</small></div>
-          <div class="summary-card"><span class="icon">💵</span><strong>Buffered budget</strong><small>Includes insurance + food</small></div>
+          <div class="summary-card"><span class="icon">📍</span><strong>Base: Davis</strong><small>Except Yosemite overnight</small></div>
+          <div class="summary-card"><span class="icon">🗓️</span><strong>5 travel days</strong><small>June 12–16</small></div>
+          <div class="summary-card"><span class="icon">🛣️</span><strong>~1,050 total miles</strong><small>Includes SF on June 16</small></div>
+          <div class="summary-card"><span class="icon">💵</span><strong>Overnight buffer</strong><small>Adds Yosemite lodging</small></div>
         </div>
-        <p class="hero-note">Planned to balance cooler coastal days, mild San Francisco weather, and long mountain drives with generous buffer time, food stops, parking, tickets, tolls, and rental-car costs.</p>
+        <p class="hero-note">Updated around the real departure time: a shorter Redwoods afternoon today, Tahoe tomorrow, Yosemite split across Sunday afternoon and Monday morning, then San Francisco on Tuesday.</p>
       </div>
     </header>
 
@@ -283,21 +283,25 @@
       <p class="kicker">Quick route buttons</p>
       <h2 class="section-title">Open each day in Google Maps</h2>
       <div class="route-button-grid">
-        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">
-          <strong>🗺️ Day 1: Yosemite</strong>
-          <span>~340 miles • Davis round trip</span>
-        </a>
-        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">
-          <strong>🌉 Day 2: San Francisco</strong>
-          <span>~170 miles • Alcatraz + Pier 39 + Golden Gate</span>
-        </a>
-        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">
-          <strong>🌲 Day 3: Redwoods + Coast</strong>
-          <span>~270 miles • Armstrong Redwoods + Bodega Bay + Point Reyes</span>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🌲 Day 1: Redwoods today</strong>
+          <span>Leave 12:40 PM • Armstrong + optional Bodega Bay</span>
         </a>
         <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">
-          <strong>🏔️ Day 4: Lake Tahoe</strong>
-          <span>~220 miles • Emerald Bay + South Lake Tahoe</span>
+          <strong>🏔️ Day 2: Lake Tahoe</strong>
+          <span>June 13 • Emerald Bay + South Lake Tahoe</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Oakdale,+CA/Mariposa,+CA/Yosemite+Valley,+CA" target="_blank" rel="noopener">
+          <strong>⛰️ Day 3: Yosemite overnight</strong>
+          <span>June 14 • Leave after 1 PM, stay near Yosemite</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Yosemite+Valley,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🌄 Day 4: Yosemite morning</strong>
+          <span>June 15 • Valley highlights, then back to Davis</span>
+        </a>
+        <a class="big-route-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">
+          <strong>🌉 Day 5: San Francisco</strong>
+          <span>June 16 • Waterfront + Golden Gate</span>
         </a>
       </div>
     </section>
@@ -306,153 +310,37 @@
     <main class="main">
       <section id="itinerary">
         <p class="kicker">Optimized route plan</p>
-        <h2 class="section-title">Four-day itinerary</h2>
+        <h2 class="section-title">Updated five-day itinerary</h2>
 
         <div class="timeline">
           <article class="day">
             <div class="num">1</div>
-            <div class="photo photo-yosemite" aria-label="Yosemite Valley photo"></div>
+            <div class="photo photo-coast" aria-label="Armstrong Redwoods photo"></div>
             <div>
               <div class="day-top">
                 <div>
                   <div class="date">Day 1 — Friday, June 12</div>
-                  <h2 class="day-title">Yosemite Day Trip</h2>
+                  <h2 class="day-title">Late-Start Redwoods</h2>
                 </div>
-                <div class="weather">☀️ Yosemite Valley:<br>83°F / 52°F • Sunny</div>
+                <div class="weather teal">🌲 Armstrong / coast:<br>Cooler than Davis • Bring layers</div>
               </div>
-              <div class="route">📍 <span>Davis → Yosemite Valley → Davis</span></div>
-              <div class="time">🕘 <span>Leave 5:30 AM • Return around 8:30–9:00 PM</span></div>
-              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~340 miles round trip</span></div>
+              <div class="route">📍 <span>Davis → Armstrong Redwoods → optional Bodega Bay → Davis</span></div>
+              <div class="time">🕘 <span>Leave Davis 12:40 PM • Return around 9:00–10:00 PM</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~210–240 miles round trip</span></div>
               <div class="action-row">
-                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Yosemite route</a>
-                <a class="map-btn secondary" href="https://www.nps.gov/yose/planyourvisit/fees.htm" target="_blank" rel="noopener">🎟️ Yosemite fees</a>
-              </div>
-              <div class="stop-timeline">
-                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
-                <ul class="stop-list">
-                  <li><span class="stop-time">5:30 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Keep breakfast, water, and snacks packed before departure.</span></li>
-                  <li><span class="stop-time">7:30 AM</span><span class="stop-text"><strong>Oakdale / Groveland quick stop.</strong> Coffee, restroom, top off gas if needed.</span></li>
-                  <li><span class="stop-time">10:00 AM</span><span class="stop-text"><strong>Enter Yosemite Valley area.</strong> Start with Tunnel View if parking is manageable.</span></li>
-                  <li><span class="stop-time">10:30 AM</span><span class="stop-text"><strong>Tunnel View + Bridalveil Fall.</strong> Short photo stops; do not overpack the first half.</span></li>
-                  <li><span class="stop-time">12:15 PM</span><span class="stop-text"><strong>Lunch in Yosemite Village.</strong> Use this as restroom + reset time.</span></li>
-                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Lower Yosemite Fall walk.</strong> Easy scenic walk if everyone has energy.</span></li>
-                  <li><span class="stop-time">3:30 PM</span><span class="stop-text"><strong>El Capitan Meadow.</strong> Relaxed final Valley stop before driving out.</span></li>
-                  <li><span class="stop-time">4:45 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner on the way back, likely Oakdale / Manteca side.</span></li>
-                  <li><span class="stop-time">8:30–9 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Early sleep after the longest day.</span></li>
-                </ul>
-              </div>
-
-              <div class="details">
-                <div>
-                  <p class="label">Highlights</p>
-                  <ul class="highlights">
-                    <li>Tunnel View</li>
-                    <li>Bridalveil Fall</li>
-                    <li>Yosemite Village</li>
-                    <li>Lower Yosemite Fall</li>
-                    <li>El Capitan Meadow</li>
-                  </ul>
-                </div>
-                <div class="food">
-                  <p class="label">Food</p>
-                  Quick breakfast packed / Oakdale stop • lunch in Yosemite Village • dinner on return
-                </div>
-              </div>
-
-              <div class="pill-row">
-                <span class="pill">⭐ Best because Yosemite is coolest on Friday</span>
-              </div>
-              <div class="callout">⛰️ Optional upgrade: stay 1 night near El Portal or Oakhurst if you want a more relaxed pace.</div>
-            </div>
-          </article>
-
-          <article class="day">
-            <div class="num">2</div>
-            <div class="photo photo-sf" aria-label="Golden Gate Bridge photo"></div>
-            <div>
-              <div class="day-top">
-                <div>
-                  <div class="date">Day 2 — Saturday, June 13</div>
-                  <h2 class="day-title">San Francisco Icons</h2>
-                </div>
-                <div class="weather blue">🌤️ San Francisco:<br>71°F / 57°F • Sun + clouds</div>
-              </div>
-              <div class="route">📍 <span>Davis → Alcatraz / Fisherman’s Wharf / Pier 39 / Golden Gate Bridge → Davis</span></div>
-              <div class="time">🕘 <span>Leave 7:00 AM • Return around 9:00 PM</span></div>
-              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~170 miles round trip</span></div>
-              <div class="action-row">
-                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open SF route</a>
-                <a class="map-btn secondary" href="https://www.cityexperiences.com/san-francisco/city-cruises/alcatraz/tour-options/" target="_blank" rel="noopener">🎟️ Alcatraz tickets</a>
-              </div>
-              <div class="stop-timeline">
-                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
-                <ul class="stop-list">
-                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Aim to beat Bay Area traffic and parking stress.</span></li>
-                  <li><span class="stop-time">8:45 AM</span><span class="stop-text"><strong>Arrive near Pier 33.</strong> Park once; do not move the car around the wharf area.</span></li>
-                  <li><span class="stop-time">9:30 AM</span><span class="stop-text"><strong>Alcatraz ferry / tour.</strong> Morning tour is best before the waterfront gets crowded.</span></li>
-                  <li><span class="stop-time">12:15 PM</span><span class="stop-text"><strong>Fisherman’s Wharf lunch.</strong> Casual lunch and restroom break.</span></li>
-                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Pier 39.</strong> Sea lions, shops, quick photos.</span></li>
-                  <li><span class="stop-time">3:00 PM</span><span class="stop-text"><strong>Ghirardelli / waterfront stroll.</strong> Keep this flexible depending on energy.</span></li>
-                  <li><span class="stop-time">4:30 PM</span><span class="stop-text"><strong>Golden Gate Bridge viewpoint.</strong> Use Battery Spencer or Vista Point depending on fog/parking.</span></li>
-                  <li><span class="stop-time">6:00 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner either before leaving SF or back near Davis.</span></li>
-                  <li><span class="stop-time">8:30–9 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Keep valuables hidden in SF throughout the day.</span></li>
-                </ul>
-              </div>
-
-              <div class="details">
-                <div>
-                  <p class="label">Highlights</p>
-                  <ul class="highlights">
-                    <li>Morning Alcatraz tour</li>
-                    <li>Pier 39 sea lions</li>
-                    <li>Fisherman’s Wharf lunch</li>
-                    <li>Ghirardelli / waterfront stroll</li>
-                    <li>Golden Gate Bridge viewpoint</li>
-                  </ul>
-                </div>
-                <div class="food">
-                  <p class="label">Food</p>
-                  Brunch or early lunch at Fisherman’s Wharf • snacks at Pier 39 • dinner back in Davis
-                </div>
-              </div>
-
-              <div class="pill-row">
-                <span class="pill">⭐ Mild city weather = perfect SF day</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="day">
-            <div class="num">3</div>
-            <div class="photo photo-coast" aria-label="Point Reyes coast photo"></div>
-            <div>
-              <div class="day-top">
-                <div>
-                  <div class="date">Day 3 — Sunday, June 14</div>
-                  <h2 class="day-title">North Bay Redwoods + Coast</h2>
-                </div>
-                <div class="weather teal">🌤️ Armstrong / Bodega Bay:<br>Redwoods + cool coast</div>
-              </div>
-              <div class="route">📍 <span>Davis → Armstrong Redwoods → Bodega Bay → Point Reyes → Davis</span></div>
-              <div class="time">🕘 <span>Leave 7:00–7:30 AM • Return around 8:30 PM</span></div>
-              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~270 miles round trip</span></div>
-              <div class="action-row">
-                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Armstrong + Coast route</a>
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Redwoods route</a>
                 <a class="map-btn secondary" href="https://www.parks.ca.gov/?page_id=450" target="_blank" rel="noopener">🌲 Armstrong park info</a>
               </div>
               <div class="stop-timeline">
                 <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
                 <ul class="stop-list">
-                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Bring layers; the redwood grove and coast will feel much cooler than Davis.</span></li>
-                  <li><span class="stop-time">9:15–9:30 AM</span><span class="stop-text"><strong>Arrive at Armstrong Redwoods.</strong> Park, restroom, and begin the main grove walk.</span></li>
-                  <li><span class="stop-time">9:30–11:15 AM</span><span class="stop-text"><strong>Pioneer Nature Trail / main grove.</strong> Easy redwood walk; look for Colonel Armstrong Tree and Parson Jones Tree.</span></li>
-                  <li><span class="stop-time">11:15 AM</span><span class="stop-text"><strong>Drive toward Bodega Bay.</strong> Scenic Russian River / Sonoma County drive with buffer.</span></li>
-                  <li><span class="stop-time">12:30–1:30 PM</span><span class="stop-text"><strong>Lunch near Bodega Bay or Guerneville.</strong> Keep this flexible based on hunger and parking.</span></li>
-                  <li><span class="stop-time">1:45–3:00 PM</span><span class="stop-text"><strong>Bodega Bay coast.</strong> Coastal views, short walk, coffee/snack, optional seafood/chowder.</span></li>
-                  <li><span class="stop-time">3:00–4:15 PM</span><span class="stop-text"><strong>Drive toward Point Reyes Station.</strong> Treat Point Reyes as the flexible add-on if the day runs long.</span></li>
-                  <li><span class="stop-time">4:15–5:30 PM</span><span class="stop-text"><strong>Point Reyes Station / one scenic stop.</strong> Easy final stop before heading back.</span></li>
-                  <li><span class="stop-time">6:00 PM</span><span class="stop-text"><strong>Start return to Davis.</strong> Dinner/snack stop on the way if needed.</span></li>
-                  <li><span class="stop-time">8:30–9:30 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Longer than the Muir Woods version, but more impressive redwoods.</span></li>
+                  <li><span class="stop-time">12:40 PM</span><span class="stop-text"><strong>Leave Davis.</strong> Eat before leaving or carry lunch/snacks; this is now an afternoon plan.</span></li>
+                  <li><span class="stop-time">3:00 PM</span><span class="stop-text"><strong>Arrive Armstrong Redwoods.</strong> Prioritize the main grove, restroom, and an easy loop.</span></li>
+                  <li><span class="stop-time">3:15–4:45 PM</span><span class="stop-text"><strong>Pioneer Nature Trail / main grove.</strong> See Colonel Armstrong Tree and Parson Jones Tree without rushing.</span></li>
+                  <li><span class="stop-time">5:00 PM</span><span class="stop-text"><strong>Decision point.</strong> If everyone has energy, continue to Bodega Bay; if not, dinner in Guerneville/Santa Rosa and return.</span></li>
+                  <li><span class="stop-time">6:00–7:00 PM</span><span class="stop-text"><strong>Optional Bodega Bay coast.</strong> Quick coastal view, coffee/snack, photos, and layers.</span></li>
+                  <li><span class="stop-time">7:15 PM</span><span class="stop-text"><strong>Start return to Davis.</strong> Keep this simple so Tahoe tomorrow still feels good.</span></li>
+                  <li><span class="stop-time">9–10 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Pack Tahoe layers and snacks before sleeping.</span></li>
                 </ul>
               </div>
 
@@ -463,35 +351,35 @@
                     <li>Armstrong Redwoods main grove</li>
                     <li>Pioneer Nature Trail</li>
                     <li>Colonel Armstrong Tree</li>
-                    <li>Bodega Bay coastal views</li>
-                    <li>Point Reyes Station</li>
+                    <li>Parson Jones Tree</li>
+                    <li>Optional Bodega Bay sunset/coast</li>
                   </ul>
                 </div>
                 <div class="food">
                   <p class="label">Food</p>
-                  Coffee stop in Santa Rosa/Guerneville • lunch near Bodega Bay • Point Reyes/Sebastopol snack or dinner on return
+                  Eat before leaving Davis • coffee/snack near Guerneville • dinner in Santa Rosa or on the return
                 </div>
               </div>
 
               <div class="pill-row">
-                <span class="pill">🌲 Biggest redwood experience on the trip</span>
+                <span class="pill">⭐ Point Reyes removed because 12:40 PM is too late for a relaxed version</span>
               </div>
             </div>
           </article>
 
           <article class="day">
-            <div class="num">4</div>
+            <div class="num">2</div>
             <div class="photo photo-tahoe" aria-label="Emerald Bay Lake Tahoe photo"></div>
             <div>
               <div class="day-top">
                 <div>
-                  <div class="date">Day 4 — Monday, June 15</div>
-                  <h2 class="day-title">Lake Tahoe Escape</h2>
+                  <div class="date">Day 2 — Saturday, June 13</div>
+                  <h2 class="day-title">Lake Tahoe Day Trip</h2>
                 </div>
-                <div class="weather">☀️ South Lake Tahoe:<br>82°F / 43°F • Mostly sunny</div>
+                <div class="weather">🏔️ South Lake Tahoe:<br>Sunny mountain day • Cool evening</div>
               </div>
-              <div class="route">📍 <span>Davis → Emerald Bay → South Lake Tahoe → Davis</span></div>
-              <div class="time">🕘 <span>Leave 7:00 AM • Return around 8:00 PM</span></div>
+              <div class="route">📍 <span>Davis → Emerald Bay → South Lake Tahoe → Heavenly Village → Davis</span></div>
+              <div class="time">🕘 <span>Leave 7:00 AM • Return around 8:00–9:00 PM</span></div>
               <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~220 miles round trip</span></div>
               <div class="action-row">
                 <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Tahoe route</a>
@@ -500,14 +388,14 @@
               <div class="stop-timeline">
                 <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
                 <ul class="stop-list">
-                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Check road/traffic before committing to the mountain drive.</span></li>
-                  <li><span class="stop-time">8:15 AM</span><span class="stop-text"><strong>Placerville breakfast stop.</strong> Coffee, restroom, snacks for the lake.</span></li>
-                  <li><span class="stop-time">10:30 AM</span><span class="stop-text"><strong>Emerald Bay overlook.</strong> Main photo stop; parking may be tight even on weekdays.</span></li>
+                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Bring water, layers, and patience for Saturday lake traffic.</span></li>
+                  <li><span class="stop-time">8:15 AM</span><span class="stop-text"><strong>Placerville breakfast stop.</strong> Coffee, restroom, and snacks.</span></li>
+                  <li><span class="stop-time">10:30 AM</span><span class="stop-text"><strong>Emerald Bay overlook.</strong> Main photo stop; parking can be tight.</span></li>
                   <li><span class="stop-time">12:00 PM</span><span class="stop-text"><strong>South Lake Tahoe lunch.</strong> Keep it casual near the lake or Heavenly Village.</span></li>
-                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Lakeside walk / beach time.</strong> Choose a low-effort lake stop instead of overdriving.</span></li>
-                  <li><span class="stop-time">3:30 PM</span><span class="stop-text"><strong>Heavenly Village or scenic drive.</strong> Flexible final activity based on energy.</span></li>
-                  <li><span class="stop-time">5:00 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner on the way back if needed.</span></li>
-                  <li><span class="stop-time">8:00 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Return car prep / fuel plan if needed.</span></li>
+                  <li><span class="stop-time">1:30 PM</span><span class="stop-text"><strong>Lakeside walk / beach time.</strong> Choose one low-effort lake stop rather than chasing too many points.</span></li>
+                  <li><span class="stop-time">3:30 PM</span><span class="stop-text"><strong>Heavenly Village.</strong> Flexible final activity, coffee, shops, or scenic stroll.</span></li>
+                  <li><span class="stop-time">5:30 PM</span><span class="stop-text"><strong>Start return drive.</strong> Dinner on the way back if needed.</span></li>
+                  <li><span class="stop-time">8–9 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Keep Sunday morning easy before Yosemite.</span></li>
                 </ul>
               </div>
 
@@ -516,19 +404,181 @@
                   <p class="label">Highlights</p>
                   <ul class="highlights">
                     <li>Emerald Bay overlook</li>
-                    <li>Lakeside walk</li>
-                    <li>Heavenly Village or beach time</li>
+                    <li>South Lake Tahoe lunch</li>
+                    <li>Lakeside walk or beach stop</li>
+                    <li>Heavenly Village</li>
+                    <li>Scenic mountain drive</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Breakfast stop in Placerville • lunch by the lake • dinner on return
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">⭐ Keep Tahoe as a clean round trip before the Yosemite overnight</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">3</div>
+            <div class="photo photo-yosemite" aria-label="Yosemite Valley photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 3 — Sunday, June 14</div>
+                  <h2 class="day-title">Yosemite Arrival + Overnight</h2>
+                </div>
+                <div class="weather">⛰️ Yosemite evening:<br>Late arrival • Stay overnight</div>
+              </div>
+              <div class="route">📍 <span>Davis → Oakdale / Mariposa → Yosemite area lodging</span></div>
+              <div class="time">🕘 <span>Leave 1:00 PM onward • Arrive Yosemite area around evening</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~180–220 miles depending on lodging</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Oakdale,+CA/Mariposa,+CA/Yosemite+Valley,+CA" target="_blank" rel="noopener">🗺️ Open Yosemite arrival route</a>
+                <a class="map-btn secondary" href="https://www.nps.gov/yose/planyourvisit/conditions.htm" target="_blank" rel="noopener">⚠️ Yosemite conditions</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">Before 1 PM</span><span class="stop-text"><strong>Pack overnight bags.</strong> Keep snacks, water, chargers, and layers accessible.</span></li>
+                  <li><span class="stop-time">1:00 PM</span><span class="stop-text"><strong>Leave Davis.</strong> This is mainly a positioning day, not a full Yosemite sightseeing day.</span></li>
+                  <li><span class="stop-time">3:00 PM</span><span class="stop-text"><strong>Oakdale / Mariposa stop.</strong> Gas, restroom, coffee, and dinner supplies if lodging is remote.</span></li>
+                  <li><span class="stop-time">5:30–6:30 PM</span><span class="stop-text"><strong>Arrive Yosemite area.</strong> Check in first if lodging is outside/near the park.</span></li>
+                  <li><span class="stop-time">Evening</span><span class="stop-text"><strong>Light scenic stop only.</strong> Tunnel View or a short valley stroll if time, parking, and energy line up.</span></li>
+                  <li><span class="stop-time">Night</span><span class="stop-text"><strong>Sleep near Yosemite.</strong> This is what makes Monday morning much better.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Lower-stress Yosemite approach</li>
+                    <li>Oakdale / Mariposa reset stop</li>
+                    <li>Optional Tunnel View at evening light</li>
+                    <li>Overnight near Yosemite</li>
+                    <li>Early Monday Valley access</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Lunch before leaving Davis • dinner in Mariposa/Oakhurst/El Portal or packed near lodging
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">🏨 Best lodging zones: El Portal, Yosemite Valley, Oakhurst, Mariposa</span>
+              </div>
+              <div class="callout">Because you leave after 1 PM, do not overpack Sunday. Save the actual Yosemite sightseeing for Monday morning.</div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">4</div>
+            <div class="photo photo-yosemite" aria-label="Yosemite Valley morning photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 4 — Monday, June 15</div>
+                  <h2 class="day-title">Yosemite Morning + Davis Return</h2>
+                </div>
+                <div class="weather">☀️ Yosemite Valley:<br>Start early • Avoid midday parking stress</div>
+              </div>
+              <div class="route">📍 <span>Yosemite lodging → Valley highlights → Davis</span></div>
+              <div class="time">🕘 <span>Start 7:00–8:00 AM • Return Davis around evening</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~170–220 miles back to Davis</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Yosemite+Valley,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">🗺️ Open Yosemite return route</a>
+                <a class="map-btn secondary" href="https://www.nps.gov/yose/planyourvisit/fees.htm" target="_blank" rel="noopener">🎟️ Yosemite fees</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">7:00 AM</span><span class="stop-text"><strong>Enter / move into Yosemite Valley early.</strong> The overnight pays off here.</span></li>
+                  <li><span class="stop-time">8:00 AM</span><span class="stop-text"><strong>Tunnel View or Valley viewpoint.</strong> Best photo stop before the day gets busy.</span></li>
+                  <li><span class="stop-time">9:00 AM</span><span class="stop-text"><strong>Lower Yosemite Fall walk.</strong> Easy, scenic, and good for the whole group.</span></li>
+                  <li><span class="stop-time">11:00 AM</span><span class="stop-text"><strong>Yosemite Village / lunch.</strong> Restroom, food, and souvenir stop.</span></li>
+                  <li><span class="stop-time">1:00 PM</span><span class="stop-text"><strong>El Capitan Meadow.</strong> Relaxed final Valley stop.</span></li>
+                  <li><span class="stop-time">2:30–3:30 PM</span><span class="stop-text"><strong>Start return drive.</strong> Stop in Oakdale/Manteca if dinner or coffee is needed.</span></li>
+                  <li><span class="stop-time">7:00–8:30 PM</span><span class="stop-text"><strong>Arrive Davis.</strong> Reset before San Francisco on Tuesday.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Tunnel View</li>
+                    <li>Lower Yosemite Fall</li>
+                    <li>Yosemite Village</li>
+                    <li>El Capitan Meadow</li>
                     <li>Scenic return drive</li>
                   </ul>
                 </div>
                 <div class="food">
                   <p class="label">Food</p>
-                  Breakfast stop in Placerville • lunch by the lake • dinner on the way back
+                  Breakfast near lodging • lunch in Yosemite Village • dinner on the drive back
                 </div>
               </div>
 
               <div class="pill-row">
-                <span class="pill">⭐ Weekday Tahoe = lighter traffic</span>
+                <span class="pill">⭐ This is now the main Yosemite sightseeing day</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="num">5</div>
+            <div class="photo photo-sf" aria-label="Golden Gate Bridge photo"></div>
+            <div>
+              <div class="day-top">
+                <div>
+                  <div class="date">Day 5 — Tuesday, June 16</div>
+                  <h2 class="day-title">San Francisco Icons</h2>
+                </div>
+                <div class="weather blue">🌉 San Francisco:<br>Layers + secure parking</div>
+              </div>
+              <div class="route">📍 <span>Davis → Alcatraz / Fisherman’s Wharf / Pier 39 / Golden Gate Bridge → Davis</span></div>
+              <div class="time">🕘 <span>Leave 7:00–8:00 AM • Return around evening</span></div>
+              <div class="miles">🛣️ <span><strong>Approx. driving:</strong> ~170 miles round trip</span></div>
+              <div class="action-row">
+                <a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">🗺️ Open SF route</a>
+                <a class="map-btn secondary" href="https://www.cityexperiences.com/san-francisco/city-cruises/alcatraz/tour-options/" target="_blank" rel="noopener">🎟️ Alcatraz tickets</a>
+              </div>
+              <div class="stop-timeline">
+                <p class="stop-timeline-title">Suggested stop-by-stop timeline</p>
+                <ul class="stop-list">
+                  <li><span class="stop-time">7–8 AM</span><span class="stop-text"><strong>Leave Davis.</strong> Aim for one parked location near Pier 33 / Fisherman's Wharf.</span></li>
+                  <li><span class="stop-time">Morning</span><span class="stop-text"><strong>Alcatraz if tickets are available.</strong> If not, use the waterfront + Golden Gate plan.</span></li>
+                  <li><span class="stop-time">Midday</span><span class="stop-text"><strong>Fisherman's Wharf lunch.</strong> Keep the car parked and walk the waterfront.</span></li>
+                  <li><span class="stop-time">Afternoon</span><span class="stop-text"><strong>Pier 39 + Ghirardelli.</strong> Casual, flexible, and easy after the Yosemite overnight.</span></li>
+                  <li><span class="stop-time">Late afternoon</span><span class="stop-text"><strong>Golden Gate viewpoint.</strong> Battery Spencer or Vista Point depending on fog and parking.</span></li>
+                  <li><span class="stop-time">Evening</span><span class="stop-text"><strong>Return to Davis.</strong> Leave no bags or valuables visible in the car.</span></li>
+                </ul>
+              </div>
+
+              <div class="details">
+                <div>
+                  <p class="label">Highlights</p>
+                  <ul class="highlights">
+                    <li>Alcatraz if ticketed</li>
+                    <li>Fisherman's Wharf</li>
+                    <li>Pier 39</li>
+                    <li>Ghirardelli / waterfront stroll</li>
+                    <li>Golden Gate Bridge viewpoint</li>
+                  </ul>
+                </div>
+                <div class="food">
+                  <p class="label">Food</p>
+                  Waterfront lunch • snacks at Pier 39 • dinner either in SF or back near Davis
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">⭐ Tuesday is better than weekend SF for crowds and parking</span>
               </div>
             </div>
           </article>
@@ -539,16 +589,17 @@
         <section class="side" id="budget">
           <div class="side-inner">
             <h3>Buffered Trip Budget</h3>
-            <div class="budget-row"><span class="round">🚙</span><span>Rental base + taxes/fees</span><strong>$320–$370</strong></div>
-            <div class="budget-row"><span class="round">🛡️</span><span>Optional rental protection / insurance buffer</span><strong>$120–$180</strong></div>
-            <div class="budget-row"><span class="round">⛽</span><span>Gas with mountain/coast buffer</span><strong>~$200</strong></div>
+            <div class="budget-row"><span class="round">🚙</span><span>Rental base + taxes/fees</span><strong>$400–$460</strong></div>
+            <div class="budget-row"><span class="round">🛡️</span><span>Optional rental protection / insurance buffer</span><strong>$150–$225</strong></div>
+            <div class="budget-row"><span class="round">⛽</span><span>Gas with mountain/coast buffer</span><strong>$210–$240</strong></div>
+            <div class="budget-row"><span class="round">🏨</span><span>One Yosemite-area overnight</span><strong>$250–$500</strong></div>
             <div class="budget-row"><span class="round">🌉</span><span>Bridge toll buffer</span><strong>$45–$65</strong></div>
-            <div class="budget-row"><span class="round">🅿️</span><span>Parking + park fees</span><strong>$80–$120</strong></div>
+            <div class="budget-row"><span class="round">🅿️</span><span>Parking + park fees</span><strong>$100–$150</strong></div>
             <div class="budget-row"><span class="round">🎟️</span><span>Tickets + entrance fees, 3 adults</span><strong>$200–$230</strong></div>
-            <div class="budget-row"><span class="round">🍽️</span><span>Food + snacks, 3 adults</span><strong>$700–$900</strong></div>
-            <div class="total"><span>Generous expected total</span><span>$1,650–$2,050</span></div>
+            <div class="budget-row"><span class="round">🍽️</span><span>Food + snacks, 3 adults</span><strong>$850–$1,100</strong></div>
+            <div class="total"><span>Generous expected total</span><span>$2,250–$2,970</span></div>
             <div class="total warning-total"><span>Possible Yosemite non-U.S. resident fee add-on</span><span>+$0–$300</span></div>
-            <p class="muted">Assumes 3 adults, 4 rental days, Toyota Corolla, Davis as base, and no overnight hotel. Insurance/protection pricing varies by Enterprise branch and selected products.</p>
+            <p class="muted">Assumes 3 adults, 5 travel days, Toyota Corolla, one Yosemite-area overnight, and Davis as base for the other nights. Insurance/protection and lodging pricing vary by branch/date/property.</p>
           </div>
         </section>
 
@@ -556,18 +607,18 @@
           <div class="side-inner">
             <h3>Important Notes</h3>
             <ul class="check-list">
-              <li><span class="check">✓</span><span>Book Alcatraz tickets early — official provider is Alcatraz City Cruises.</span></li>
-              <li><span class="check">✓</span><span>Armstrong Redwoods has a $10 vehicle day-use/parking fee; no Muir Woods reservation needed.</span></li>
-              <li><span class="check">✓</span><span>Bring layers: coast and San Francisco will feel much cooler than Davis.</span></li>
-              <li><span class="check">✓</span><span>Pack water, sunscreen, and snacks for Yosemite and Tahoe days.</span></li>
-              <li><span class="check">✓</span><span>17-Mile Drive / Monterey is beautiful but too ambitious as an add-on. Use it as a swap day.</span></li>
+              <li><span class="check">✓</span><span>Today is a late Redwoods start: keep it to Armstrong, with Bodega Bay only if energy and daylight are good.</span></li>
+              <li><span class="check">✓</span><span>Book the Yosemite-area overnight immediately; El Portal, Yosemite Valley, Mariposa, and Oakhurst are the best zones.</span></li>
+              <li><span class="check">✓</span><span>Check Yosemite current conditions and entrance lines before leaving Sunday afternoon.</span></li>
+              <li><span class="check">✓</span><span>Bring layers for Redwoods, Tahoe, Yosemite morning, and San Francisco.</span></li>
+              <li><span class="check">✓</span><span>For San Francisco, park once, hide all bags, and use Alcatraz only if tickets are already available.</span></li>
             </ul>
           </div>
         </section>
 
         <section class="swap">
-          <h3>If you really want Highway 1 / 17-Mile Drive</h3>
-          <p>Best used as a replacement for Tahoe or the North Bay day, not added on top of this itinerary.</p>
+          <h3>Key change</h3>
+          <p>Yosemite is now split into Sunday arrival plus Monday morning, which is much more realistic than forcing it into one late day.</p>
         </section>
       </aside>
     </main>
@@ -585,14 +636,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Rental car</td><td>$65–$70/day for 4 days, plus a tax/fee buffer</td><td class="right">$320–$370</td></tr>
-            <tr><td>Car insurance / protection</td><td>Optional Enterprise protection products such as damage waiver or liability protection; exact price varies by branch and vehicle</td><td class="right">$120–$180</td></tr>
-            <tr><td>Gas</td><td>~970 miles, ~35 mpg Corolla, $5.993/gal California regular average, plus buffer</td><td class="right">~$200</td></tr>
+            <tr><td>Rental car</td><td>$65–$70/day for about 5 days, plus a tax/fee buffer</td><td class="right">$400–$460</td></tr>
+            <tr><td>Car insurance / protection</td><td>Optional Enterprise protection products such as damage waiver or liability protection; exact price varies by branch and vehicle</td><td class="right">$150–$225</td></tr>
+            <tr><td>Gas</td><td>~1,050 miles, ~35 mpg Corolla, California gas pricing, plus mountain/coast buffer</td><td class="right">$210–$240</td></tr>
+            <tr><td>Yosemite lodging</td><td>One night near Yosemite, with wide buffer for short-notice pricing</td><td class="right">$250–$500</td></tr>
             <tr><td>Tolls</td><td>Bay Area bridge crossings including a generous Golden Gate / Bay Bridge / route-choice buffer</td><td class="right">$45–$65</td></tr>
-            <tr><td>Parking + park fees</td><td>SF waterfront parking, Armstrong Redwoods vehicle day-use/parking, Emerald Bay/Tahoe parking, and misc. parking</td><td class="right">$80–$120</td></tr>
+            <tr><td>Parking + park fees</td><td>SF waterfront parking, Armstrong Redwoods vehicle day-use/parking, Emerald Bay/Tahoe parking, Yosemite parking/entrance, and misc. parking</td><td class="right">$100–$150</td></tr>
             <tr><td>Tickets + entrances</td><td>Alcatraz Day Tour for 3 adults, Yosemite vehicle entrance, Armstrong Redwoods vehicle fee, and other entrance buffers</td><td class="right">$200–$230</td></tr>
-            <tr><td>Food + snacks</td><td>3 adults × 4 days, assuming casual meals out, snacks, coffee, and some buffer</td><td class="right">$700–$900</td></tr>
-            <tr><td><strong>Estimated total</strong></td><td><strong>Practical high-buffer trip total without hotel</strong></td><td class="right">$1,650–$2,050</td></tr>
+            <tr><td>Food + snacks</td><td>3 adults × 5 travel days, assuming casual meals out, snacks, coffee, and some buffer</td><td class="right">$850–$1,100</td></tr>
+            <tr><td><strong>Estimated total</strong></td><td><strong>Practical high-buffer trip total with one Yosemite overnight</strong></td><td class="right">$2,250–$2,970</td></tr>
             <tr><td><strong>Possible add-on</strong></td><td><strong>If Yosemite non-U.S. resident entrance surcharge applies, verify before travel</strong></td><td class="right">+$0–$300</td></tr>
           </tbody>
         </table>
@@ -603,10 +655,11 @@
       <p class="kicker">Route logic</p>
       <h2 class="section-title">Mileage + route snapshot</h2>
       <div class="grid4">
-        <div class="mini"><strong>Day 1: Yosemite</strong><span>~340 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Yosemite+Village,+CA/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
-        <div class="mini"><strong>Day 2: San Francisco</strong><span>~170 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
-        <div class="mini"><strong>Day 3: Armstrong + Coast</strong><span>~270 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Point+Reyes+Station,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
-        <div class="mini"><strong>Day 4: Tahoe</strong><span>~220 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 1: Redwoods</strong><span>~210–240 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Armstrong+Redwoods+State+Natural+Reserve,+17000+Armstrong+Woods+Rd,+Guerneville,+CA/Bodega+Bay,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 2: Tahoe</strong><span>~220 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Emerald+Bay+State+Park,+California/South+Lake+Tahoe,+CA/Heavenly+Village,+South+Lake+Tahoe,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 3: Yosemite arrival</strong><span>~180–220 miles one way<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Oakdale,+CA/Mariposa,+CA/Yosemite+Valley,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 4: Yosemite return</strong><span>~170–220 miles back<br><a class="map-btn" href="https://www.google.com/maps/dir/Yosemite+Valley,+CA/Tunnel+View,+Yosemite+National+Park/Bridalveil+Fall,+Yosemite+National+Park/Lower+Yosemite+Fall,+Yosemite+National+Park/El+Capitan+Meadow,+Yosemite+National+Park/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
+        <div class="mini"><strong>Day 5: San Francisco</strong><span>~170 miles round trip<br><a class="map-btn" href="https://www.google.com/maps/dir/Davis,+CA/Pier+33+Alcatraz+Landing,+San+Francisco,+CA/Fisherman's+Wharf,+San+Francisco,+CA/Pier+39,+San+Francisco,+CA/Golden+Gate+Bridge+Vista+Point,+San+Francisco,+CA/Davis,+CA" target="_blank" rel="noopener">Open route</a></span></div>
       </div>
     </section>
 
@@ -648,7 +701,7 @@
       <div>
         <div class="footer-title">Northern California Road Trip</div>
         <p>Make memories. Take the scenic way.</p>
-        <p class="source">Updated with Armstrong Redwoods, crisp realistic photos, Google Maps buttons, daily mileage estimates, and stop-by-stop timelines.</p>
+        <p class="source">Updated June 12 with the new live plan: late-start Redwoods, Tahoe, Yosemite overnight, Davis return, and San Francisco on June 16.</p>
         <p class="source">Photo credits: Wikimedia Commons / Creative Commons: <a href="https://commons.wikimedia.org/wiki/File:Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg" target="_blank" rel="noopener">Yosemite</a>, <a href="https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg" target="_blank" rel="noopener">Golden Gate</a>, <a href="https://commons.wikimedia.org/wiki/File:Armstrong_Redwoods_State_Natural_Reserve_-_02.jpg" target="_blank" rel="noopener">Armstrong Redwoods</a>, <a href="https://commons.wikimedia.org/wiki/File:Emerald_Bay,_Lake_Tahoe,_Nevada_(21560966962).jpg" target="_blank" rel="noopener">Emerald Bay</a>, <a href="https://commons.wikimedia.org/wiki/File:Coast_of_Point_Reyes_(TK13).JPG" target="_blank" rel="noopener">Point Reyes</a>.</p>
       </div>
       <div aria-hidden="true">📷 &nbsp; 🧭 &nbsp; 🚗 &nbsp; 🌉</div>
