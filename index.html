@@ -3,257 +3,368 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tejas Patil — Personal Site</title>
-    <meta name="description" content="Tejas Patil — CS @ UC Davis (GPA 4.0). GenAI/ML and full‑stack engineer. Projects: I‑Care (Alzheimer’s), Cross‑Modal Fusion, HPC log transformers, image captioning." />
-    <style>
-      :root {
-        --bg: #0b0c10;
-        --card: #111216;
-        --text: #e9ecf1;
-        --muted: #9aa3af;
-        --accent: #60a5fa;
-        --chip: #1f2937;
-        --maxw: 980px;
-      }
-      html { color-scheme: light dark; }
-      body {
-        margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-        background: linear-gradient(180deg, #0b0c10 0%, #0b0c10 60%, #0e1116 100%);
-        color: var(--text);
-      }
-      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 80px; }
-      header.site { display: grid; gap: 10px; padding: 28px 0 16px; border-bottom: 1px solid #1f2430; }
-      header h1 { font-size: clamp(28px, 3.5vw, 40px); margin: 0; letter-spacing: 0.2px; }
-      .subtitle { color: var(--muted); margin: 0; }
-      .contact a { color: var(--text); text-decoration: none; border-bottom: 1px dotted #394150; }
-      .contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-      nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-      nav a { padding: 8px 10px; background: #0e121a; border: 1px solid #1b2230; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 14px; }
-      nav a:hover { border-color: var(--accent); color: var(--accent); }
-      section { padding: 28px 0; }
-      h2 { font-size: 20px; letter-spacing: 0.5px; margin: 0 0 14px; text-transform: uppercase; color: #c7d2fe; }
-      .card { background: var(--card); border: 1px solid #1b2230; border-radius: 16px; padding: 18px; }
-      .grid { display: grid; gap: 14px; }
-      .grid.two { grid-template-columns: 1fr; }
-      .grid.three { grid-template-columns: 1fr; }
-      @media (min-width: 800px){ .grid.two { grid-template-columns: 1fr 1fr; } .grid.three { grid-template-columns: repeat(3, 1fr); } }
-      .role { display: grid; gap: 6px; }
-      .role h3 { margin: 0; font-size: 18px; }
-      .role .meta { color: var(--muted); font-size: 14px; }
-      ul.tight { margin: 6px 0 0 22px; }
-      .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-      .chip { background: var(--chip); color: #d1d5db; padding: 6px 10px; border-radius: 999px; font-size: 13px; border: 1px solid #263041; }
-      .edu .school { display: grid; gap: 4px; }
-      footer { color: var(--muted); border-top: 1px solid #1f2430; padding-top: 18px; }
-      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-      a.btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid #1b2230; text-decoration: none; }
-      a.btn:hover { border-color: var(--accent); color: var(--accent); }
-    </style>
+    <title>Tejas Patil — AI &amp; Healthcare Researcher</title>
+    <meta
+      name="description"
+      content="Tejas Patil is a Computer Science PhD student at UC Davis researching multimodal AI, human-centered sensing, and digital health systems for cognitive care."
+    />
+    <meta name="theme-color" content="#f5f3ec" />
+    <link rel="canonical" href="https://tejassvpatil.github.io/" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tejassvpatil.github.io/" />
+    <meta property="og:title" content="Tejas Patil — AI &amp; Healthcare Researcher" />
+    <meta
+      property="og:description"
+      content="PhD researcher building multimodal and human-centered AI systems for cognitive health and real-world care."
+    />
+    <meta property="og:image" content="https://tejassvpatil.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tejas Patil — AI &amp; Healthcare Researcher" />
+    <meta
+      name="twitter:description"
+      content="PhD researcher building multimodal and human-centered AI systems for cognitive health and real-world care."
+    />
+    <meta name="twitter:image" content="https://tejassvpatil.github.io/og.png" />
   </head>
+
   <body>
-    <a class="sr-only" href="#content">Skip to content</a>
-    <div class="wrap">
-      <header class="site">
-        <h1>Tejas Patil</h1>
-        <p class="subtitle">CS @ UC Davis (GPA 4.0) · GenAI / ML · Full‑stack</p>
-        <p class="contact">
-          <a href="tel:+15309796396" rel="me">+1 (530) 979‑6396</a> · Davis, CA ·
-          <a href="mailto:tejas.svpatil@gmail.com" rel="me">tejas.svpatil@gmail.com</a> ·
-          <a href="https://linkedin.com/in/tejas-svpatil" target="_blank" rel="me noopener">LinkedIn</a> ·
-          <a href="https://github.com/tejassvpatil" target="_blank" rel="me noopener">GitHub</a>
-        </p>
-        <nav aria-label="Primary">
-          <a href="#about">About</a>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="topbar">
+      <div class="shell nav-inner">
+        <a class="nav-brand" href="#top" aria-label="Tejas Patil, home"><span>TP</span> // research</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
           <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a class="nav-cta" href="mailto:tpatil@ucdavis.edu">Email</a>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <main id="content" role="main">
-        <section id="about">
-          <h2>About</h2>
-          <div class="card">
-            <p>
-              Graduate Student Researcher at the UC Davis Alzheimer’s Disease Research Center, building the
-              <strong>I‑Care</strong> platform that enables remote caregivers to support older adults with Alzheimer’s, including real‑time chat,
-              video calls (WebRTC), adaptive reminders, and a personalized task calendar. Previously, full‑stack Software Engineer at Capgemini
-              for 2+ years, serving the global bank ABN AMRO on digitization of commercial banking process.
-            </p>
-            <div class="chips" aria-label="Focus areas">
-              <span class="chip">GenAI &amp; LLMs</span>
-              <span class="chip">Multimodal ML</span>
-              <span class="chip">React / Vue</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">Java / SpringBoot</span>
-              <span class="chip">Azure • AZ‑900</span>
+    <main id="main">
+      <section class="shell hero" id="top">
+        <div>
+          <p class="eyebrow">PhD researcher · UC Davis Health</p>
+          <h1>AI for health,<br />built for <em>real life.</em></h1>
+          <p class="hero-copy">
+            I’m <strong>Tejas Patil</strong>, a Computer Science PhD student building multimodal machine learning and
+            human-centered systems for cognitive health, remote care, and caregiver support.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#research">Explore research <span class="arrow">→</span></a>
+            <a class="button" href="https://scholar.google.com/citations?user=ULMuzloAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span class="arrow">↗</span></a>
+            <a class="button" href="https://github.com/tejassvpatil" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+          </div>
+        </div>
+
+        <aside class="research-console" aria-label="Current research focus">
+          <div class="console-top">
+            <span class="label">Current research</span>
+            <span class="status-dot" aria-hidden="true"></span>
+          </div>
+          <svg class="signal" viewBox="0 0 320 96" role="img" aria-label="Abstract signal trace">
+            <path d="M0 55 H52 L66 54 L75 59 L86 41 L96 67 L108 22 L120 75 L132 48 L144 55 H166 L181 41 L194 52 L212 29 L230 57 L246 43 L263 47 L282 25 L301 39 L320 28" fill="none" stroke="#1757b8" stroke-width="2" vector-effect="non-scaling-stroke" />
+            <circle cx="108" cy="22" r="3.5" fill="#c85d48" />
+            <circle cx="212" cy="29" r="3.5" fill="#c85d48" />
+            <path d="M0 84 H320" fill="none" stroke="#d6d4ca" stroke-width="1" stroke-dasharray="3 5" />
+          </svg>
+          <ol class="focus-list">
+            <li>Multimodal learning for cognitive health</li>
+            <li>Human-centered AI for caregiving</li>
+            <li>In-home sensing and digital health</li>
+          </ol>
+          <div class="console-foot"><span class="status-dot" aria-hidden="true"></span> open to research collaborations</div>
+        </aside>
+      </section>
+
+      <div class="shell facts" aria-label="Profile highlights">
+        <div class="fact"><strong>PhD</strong><span>Computer Science · UC Davis</span></div>
+        <div class="fact"><strong>6</strong><span>research publications &amp; submissions</span></div>
+        <div class="fact"><strong>4.0</strong><span>graduate GPA</span></div>
+        <div class="fact"><strong>30%</strong><span>faster I-Care system responsiveness</span></div>
+      </div>
+
+      <section class="section shell" id="research">
+        <div class="section-grid">
+          <p class="section-kicker">01 / Research</p>
+          <div>
+            <h2 class="section-title">Researching intelligence that works beyond the benchmark.</h2>
+
+            <div class="agenda-grid" aria-label="Research agenda">
+              <article class="agenda-item">
+                <span class="mono">R.01</span>
+                <h3>Multimodal AI for cognitive health</h3>
+                <p>Fusing imaging, longitudinal cognition, genetics, and sensor signals to model disease trajectories and everyday function.</p>
+              </article>
+              <article class="agenda-item">
+                <span class="mono">R.02</span>
+                <h3>Human-centered care systems</h3>
+                <p>Designing accessible tools that support autonomy, coordination, and trust for older adults and remote caregivers.</p>
+              </article>
+              <article class="agenda-item">
+                <span class="mono">R.03</span>
+                <h3>Deployable digital health</h3>
+                <p>Building privacy-aware sensing and software infrastructure that can survive the constraints of real homes and clinical research.</p>
+              </article>
+            </div>
+
+            <div class="project-list" aria-label="Selected research projects">
+              <article class="project">
+                <span class="project-index">P.01</span>
+                <div>
+                  <h3>Multimodal prediction of Alzheimer’s disease progression</h3>
+                  <p>Integrated T1-weighted MRI, longitudinal cognitive scores, and genetic risk factors using modality-specific encoders and cross-modal attention to distinguish stable from progressive mild cognitive impairment.</p>
+                  <div class="tags"><span class="tag">3D CNN</span><span class="tag">GRU</span><span class="tag">cross-modal attention</span><span class="tag">ADNI</span></div>
+                </div>
+                <div class="project-aside">
+                  <div class="metric">0.918<small>tri-modal ROC-AUC</small></div>
+                  <a class="text-link" href="https://github.com/tejassvpatil/multimodal-alzheimers-prediction" target="_blank" rel="noopener">View code <span class="arrow">↗</span></a>
+                </div>
+              </article>
+
+              <article class="project">
+                <span class="project-index">P.02</span>
+                <div>
+                  <h3>I-Care: remote caregiving and in-home sensing</h3>
+                  <p>Building caregiver-patient workflows, privacy-preserving sensor summaries, and clinical research infrastructure for cognitively accessible remote care. The work spans real-time communication, calendar coordination, authorization, and multimodal sensing.</p>
+                  <div class="tags"><span class="tag">digital health</span><span class="tag">human-centered AI</span><span class="tag">Firebase</span><span class="tag">FastAPI</span></div>
+                </div>
+                <div class="project-aside">
+                  <div class="metric">30%<small>responsiveness improvement</small></div>
+                  <a class="text-link" href="https://doi.org/10.54941/ahfe1006972" target="_blank" rel="noopener">Related paper <span class="arrow">↗</span></a>
+                </div>
+              </article>
+
+              <article class="project">
+                <span class="project-index">P.03</span>
+                <div>
+                  <h3>Zero-shot promptable instance segmentation</h3>
+                  <p>Repurposed a pretrained Stable Diffusion U-Net as a deterministic, one-step image segmenter, adding multi-point positive and negative prompting and benchmarking against Segment Anything on COCO.</p>
+                  <div class="tags"><span class="tag">diffusion models</span><span class="tag">vision</span><span class="tag">promptable segmentation</span><span class="tag">COCO</span></div>
+                </div>
+                <div class="project-aside">
+                  <div class="metric">1 step<small>deterministic inference</small></div>
+                  <a class="text-link" href="https://github.com/tejassvpatil/semantic-image-segmentation/blob/main/Image_Seg_for_VLM.pdf" target="_blank" rel="noopener">Read report <span class="arrow">↗</span></a>
+                </div>
+              </article>
+            </div>
+
+            <div class="more-work" aria-label="Additional research projects">
+              <article class="mini-project">
+                <span class="mono label">2024 · ML for health</span>
+                <h4>One-hour-ahead blood glucose prediction for Type 1 diabetes</h4>
+                <a class="text-link" href="https://github.com/anirudh-r-hub/stats221project" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+              </article>
+              <article class="mini-project">
+                <span class="mono label">2024 · Transformers</span>
+                <h4>Failure prediction in high-performance computing logs</h4>
+                <a class="text-link" href="https://github.com/allisonaustin/log-transformers" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+              </article>
+              <article class="mini-project">
+                <span class="mono label">2024 · Empirical software</span>
+                <h4>Threat and growth patterns across 30,000 NPM packages</h4>
+                <a class="text-link" href="https://github.com/vaishnavikosuri/Study-on-npm-ecosystem" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+              </article>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="experience">
-          <h2>Experience</h2>
-          <div class="grid">
-            <article class="card role">
-              <h3>Graduate Student Researcher — UC Davis Alzheimer’s Disease Research Centre</h3>
-              <div class="meta">Mar 2025 – Present · React, VueJS, JavaScript, Firebase, Python, PyTorch</div>
-              <ul class="tight">
-                <li>Building and enhancing <strong>I‑Care</strong> to enable remote caregiver support with chat, WebRTC video calls, adaptive reminders, and a personalized task calendar.</li>
-                <li>Optimized Firebase backend across tasks/goals/events/access controls, reducing redundant reads/writes and improving responsiveness by <strong>30%</strong>.</li>
-                <li>Co‑developing a GenAI‑augmented system using speech, motion, and vitals data to detect cognitive decline and trigger adaptive interventions.</li>
-              </ul>
-            </article>
-
-            <article class="card role">
-              <h3>Software Engineer — Capgemini</h3>
-              <div class="meta">Aug 2021 – Aug 2023 · Java, JavaScript, VueJS, Git, NPM, REST</div>
-              <ul class="tight">
-                <li>Full‑stack developer for ABN AMRO, digitizing commercial banking processes, revamping CX, and improving conversion rates by <strong>60%</strong>.</li>
-                <li>Maintained internal tech docs on Azure DevOps Wiki; led sprint demos and scrum ceremonies; collaborated with stakeholders to shape requirements.</li>
-                <li>Drove a <strong>40%</strong> reduction in Customer Effort Score via performance optimization; delivered via Azure CI/CD in an agile SDLC.</li>
-              </ul>
-            </article>
-
-            <article class="card role">
-              <h3>Software Engineer Intern — Capgemini</h3>
-              <div class="meta">Feb 2021 – Apr 2021 · Java, SpringBoot, Angular</div>
-              <ul class="tight">
-                <li>Led a team of 3 to build a sports‑equipment e‑commerce portal on Spring.</li>
-                <li>Owned Oracle 11g database ops and Angular front‑end features.</li>
-                <li>Implemented unit/integration tests with JUnit and Mockito.</li>
-              </ul>
-            </article>
+      <section class="section shell" id="publications">
+        <div class="section-grid">
+          <p class="section-kicker">02 / Publications</p>
+          <div>
+            <h2 class="section-title">Work across remote care, cognitive support, and trustworthy systems.</h2>
+            <ol class="publication-list">
+              <li class="publication">
+                <span class="publication-year">2026</span>
+                <div>
+                  <h3>AlzGood: Validating Remote Care Systems in the Wild via an Interactive Deployment Framework</h3>
+                  <p>D. Y. Lee, A. M. Weakley, <strong>Tejas Patil</strong>, H. Wei, D. Cardona, and S. Pan · IEEE/ACM CHASE Workshop</p>
+                </div>
+                <span class="publication-status submitted">Submitted</span>
+              </li>
+              <li class="publication">
+                <span class="publication-year">2026</span>
+                <div>
+                  <h3>AI-Care: A Conversational Agentic System for Task Coordination in Alzheimer’s Disease Care</h3>
+                  <p>P. Yadav, M. Cohn, P. Koppolu, H. Agarwal, A. Gohil, <strong>Tejas Patil</strong>, S. Pimento, and A. Weakley · IEEE/ACM CHASE Workshop</p>
+                </div>
+                <span class="publication-status submitted">Submitted</span>
+              </li>
+              <li class="publication">
+                <span class="publication-year">2025</span>
+                <div>
+                  <h3><a href="https://doi.org/10.54941/ahfe1006972" target="_blank" rel="noopener">Promoting Autonomy in Older Adults with Cognitive Impairment: Co-Designing an Interactive Calendar for Memory Support</a></h3>
+                  <p>A. Weakley et al., including <strong>Tejas Patil</strong> · Human Factors in Design, Engineering, and Computing, AHFE Open Access, vol. 199</p>
+                </div>
+                <span class="publication-status">Published</span>
+              </li>
+              <li class="publication">
+                <span class="publication-year">2021</span>
+                <div>
+                  <h3><a href="https://doi.org/10.1109/ASIANCON51346.2021.9544807" target="_blank" rel="noopener">Secure Authentication using Zero Knowledge Proof</a></h3>
+                  <p>A. Pathak, <strong>Tejas Patil</strong>, S. Pawar, P. Raut, and S. Khairnar · IEEE ASIANCON</p>
+                </div>
+                <span class="publication-status">Published</span>
+              </li>
+              <li class="publication">
+                <span class="publication-year">2021</span>
+                <div>
+                  <h3><a href="https://digitalcommons.unl.edu/libphilprac/5046" target="_blank" rel="noopener">Bibliometric Survey on Zero-Knowledge Proof for Authentication</a></h3>
+                  <p>A. Pathak, <strong>Tejas Patil</strong>, S. Pawar, P. Raut, S. Khairnar, and S. Gite · Library Philosophy and Practice</p>
+                </div>
+                <span class="publication-status">Published</span>
+              </li>
+              <li class="publication">
+                <span class="publication-year">2020</span>
+                <div>
+                  <h3><a href="https://drive.google.com/file/d/1fbdHTVlFXUf0c9Ucc7XEIxZUzG8KQJUQ/view" target="_blank" rel="noopener">A Survey on Methodologies for Intensifying the Security in IoT Environment</a></h3>
+                  <p>A. Pathak, <strong>Tejas Patil</strong>, S. Pawar, P. Raut, and S. Khairnar · Journal of Critical Reviews, vol. 7, no. 19</p>
+                </div>
+                <span class="publication-status">Published</span>
+              </li>
+            </ol>
+            <div class="link-row">
+              <a class="button" href="https://scholar.google.com/citations?user=ULMuzloAAAAJ&amp;hl=en" target="_blank" rel="noopener">Full record on Google Scholar <span class="arrow">↗</span></a>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="projects">
-          <h2>Projects</h2>
-          <div class="grid two">
-            <article class="card">
-              <h3>Cross‑Modal Attention Fusion for Longitudinal Alzheimer’s Trajectory Modeling</h3>
-              <p>
-                Built a tri‑modal model integrating MRI (3D‑CNN), cognitive sequences (GRU), and genetics (MLP) with cross‑modal attention,
-                achieving <strong>ROC‑AUC 0.9932</strong> and <strong>precision 0.947</strong>. Ran ablations across 7 fusion variants; found genetic‑cognitive pairing most predictive and
-                analyzed trade‑offs from modality‑specific noise and missingness.
-              </p>
-              <div class="chips">
-                <span class="chip">PyTorch</span>
-                <span class="chip">3D CNN · GRU · MLP</span>
-                <span class="chip">Cross‑modal attention</span>
+      <section class="section shell" id="experience">
+        <div class="section-grid">
+          <p class="section-kicker">03 / Experience</p>
+          <div>
+            <h2 class="section-title">Research depth, backed by systems experience.</h2>
+            <div class="timeline">
+              <article class="timeline-item">
+                <div>
+                  <h3>Graduate Student Researcher</h3>
+                  <p class="place">UC Davis Health · Department of Neurology</p>
+                  <p class="description">Developing AI, sensing, and software systems for remote caregiving and clinical research in the Everyday Cognition and Resilient Aging Lab.</p>
+                </div>
+                <time datetime="2025-03">Mar 2025 — present</time>
+              </article>
+              <article class="timeline-item">
+                <div>
+                  <h3>Teaching Assistant</h3>
+                  <p class="place">University of California, Davis</p>
+                  <p class="description">Teaching computer science and technology ethics, leading discussions and office hours, and mentoring students. Rated 5/5 for ECS 188 and nominated for an Outstanding Graduate Teaching Assistant Award.</p>
+                </div>
+                <time datetime="2024-08">Aug 2024 — present</time>
+              </article>
+              <article class="timeline-item">
+                <div>
+                  <h3>Software Engineer / Associate Consultant</h3>
+                  <p class="place">ABN AMRO Bank N.V. · Capgemini</p>
+                  <p class="description">Built Java services, REST APIs, and customer-facing banking workflows, contributing to a 60% improvement in key conversion metrics and a 40% reduction in Customer Effort Score.</p>
+                </div>
+                <time datetime="2021-08">Aug 2021 — Aug 2023</time>
+              </article>
+              <article class="timeline-item">
+                <div>
+                  <h3>Undergraduate Researcher</h3>
+                  <p class="place">University of Pune</p>
+                  <p class="description">Studied zero-knowledge authentication and IoT security, co-authoring three papers spanning system design, bibliometric analysis, and security methodology.</p>
+                </div>
+                <time datetime="2019-12">Dec 2019 — Jun 2021</time>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="about">
+        <div class="section-grid">
+          <p class="section-kicker">04 / About</p>
+          <div>
+            <h2 class="section-title">A computer scientist interested in the messy middle between models and people.</h2>
+            <div class="profile-grid">
+              <div class="profile-copy">
+                <p>My research asks how AI systems can become useful, trustworthy parts of everyday care—not just high-performing models in isolation.</p>
+                <p>I’m a PhD student in Computer Science at UC Davis, advised by Dr. Alyssa Weakley and Dr. Chen-Nee Chuah. At UC Davis Health, I work across machine learning, human-computer interaction, sensing, and production software to support cognitive health and remote caregiving.</p>
+                <p>Before graduate school, I was a software engineer building commercial banking platforms. That background still shapes how I work: I care about evaluation, but I also care about privacy boundaries, system responsiveness, failure modes, and whether a tool fits into a person’s actual day.</p>
+                <div class="link-row">
+                  <a class="text-link" href="mailto:tpatil@ucdavis.edu">tpatil@ucdavis.edu <span class="arrow">→</span></a>
+                  <a class="text-link" href="https://www.linkedin.com/in/tejas-svpatil" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+                </div>
               </div>
-            </article>
-
-            <article class="card">
-              <h3>Transformers for Failure Prediction in HPC System Logs</h3>
-              <p>
-                Developed and evaluated LLM‑style models (minGPT, BERT) for anomaly detection in HPC logs, improving prediction accuracy by
-                <strong>15%</strong> on the System 20 dataset (LANL). Implemented probabilistic inference and diverse attention mechanisms.
-              </p>
-              <div class="chips">
-                <span class="chip">BERT · minGPT</span>
-                <span class="chip">Anomaly detection</span>
-                <span class="chip">Probabilistic inference</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Deep Learning Image Captioning for Accessibility</h3>
-              <p>
-                Designed a Merge‑Model architecture combining CNN and LSTM for image features and sequence generation. Compared 5 pre‑trained CNNs
-                (VGG16/19, ResNet50, InceptionV3, Xception) and improved BLEU score.
-              </p>
-              <div class="chips">
-                <span class="chip">CNN‑LSTM</span>
-                <span class="chip">BLEU evaluation</span>
-                <span class="chip">Accessibility</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="skills">
-          <h2>Skills</h2>
-          <div class="grid three">
-            <div class="card">
-              <h3>Languages</h3>
-              <p>Java, Python, JavaScript, HTML, CSS, C++, SQL</p>
-            </div>
-            <div class="card">
-              <h3>Frameworks &amp; Libraries</h3>
-              <p>PyTorch, VueJS, React, SpringBoot, Keras, NumPy, Pandas</p>
-            </div>
-            <div class="card">
-              <h3>Databases</h3>
-              <p>Oracle, MongoDB, MySQL, SQLite</p>
-            </div>
-            <div class="card">
-              <h3>GenAI Tools &amp; LLMs</h3>
-              <p>Hugging Face, GPT, BERT, LangChain, Prompt Engineering, RAG</p>
-            </div>
-            <div class="card">
-              <h3>DevOps &amp; Tools</h3>
-              <p>Azure (Microsoft Certified AZ‑900), Docker, Kubernetes, Git, Postman, Eclipse</p>
+              <dl class="profile-details">
+                <div><dt>Education</dt><dd>PhD, Computer Science · UC Davis · GPA 4.0</dd></div>
+                <div><dt>Advisors</dt><dd>Dr. Alyssa Weakley · Dr. Chen-Nee Chuah</dd></div>
+                <div><dt>Methods</dt><dd>Multimodal learning · deep learning · sensing · human-centered design</dd></div>
+                <div><dt>Systems</dt><dd>PyTorch · Python · FastAPI · Firebase · React · Vue</dd></div>
+                <div><dt>Recognition</dt><dd>Outstanding GTA Award nomination · Capgemini Rising Star</dd></div>
+                <div><dt>Location</dt><dd>Davis, California</dd></div>
+              </dl>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="education" class="edu">
-          <h2>Education</h2>
-          <div class="grid two">
-            <div class="card school">
-              <h3>University of California, Davis — M.S. Computer Science</h3>
-              <p class="meta">Sep 2023 – Present · GPA: 4.0</p>
-              <p>Relevant Courses: Machine Learning &amp; Discovery, Advanced Deep Learning, Vision &amp; Language Research</p>
-            </div>
-            <div class="card school">
-              <h3>Savitribai Phule Pune University — B.E. Computer Engineering</h3>
-              <p class="meta">Jul 2017 – Jul 2021 · GPA: 3.74</p>
-              <p>Relevant Courses: Engineering Mathematics, Discrete Mathematics, Data Structures &amp; Algorithms</p>
-            </div>
+      <section class="cta" id="contact">
+        <div class="shell cta-inner">
+          <div>
+            <p class="eyebrow">Let’s work on something consequential</p>
+            <h2 class="cta-title">Interested in AI that can hold up in the real world?</h2>
           </div>
-        </section>
+          <a class="button" href="mailto:tpatil@ucdavis.edu">Start a conversation <span class="arrow">→</span></a>
+        </div>
+      </section>
+    </main>
 
-        <section id="contact">
-          <h2>Contact</h2>
-          <div class="card">
-            <p>Open to software engineering roles (AI/ML, full‑stack) and research collaborations. Best way to reach me is email.</p>
-            <p>
-              <a class="btn" href="mailto:tejas.svpatil@gmail.com">Email Tejas</a>
-              <a class="btn" href="https://linkedin.com/in/tejas-svpatil" target="_blank" rel="noopener">Connect on LinkedIn</a>
-              <a class="btn" href="https://github.com/tejassvpatil" target="_blank" rel="noopener">GitHub</a>
-            </p>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <small>© <span id="year"></span> Tejas Patil · Built with HTML &amp; CSS · Hosted on GitHub Pages</small>
-      </footer>
-    </div>
+    <footer>
+      <div class="shell footer-inner">
+        <span class="footer-note">© <span id="year">2026</span> Tejas Patil · Davis, CA</span>
+        <div class="footer-links">
+          <a href="https://scholar.google.com/citations?user=ULMuzloAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://github.com/tejassvpatil" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/tejas-svpatil" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
-    <!-- Structured data for better SEO -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tejas Patil",
-      "jobTitle": "Graduate Student Researcher",
-      "email": "mailto:tejas.svpatil@gmail.com",
-      "telephone": "+1-530-979-6396",
-      "address": {"@type": "PostalAddress", "addressLocality": "Davis", "addressRegion": "CA", "addressCountry": "US"},
-      "affiliation": {"@type": "Organization", "name": "UC Davis Alzheimer’s Disease Research Centre"},
-      "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of California, Davis"},{"@type": "CollegeOrUniversity", "name": "Savitribai Phule Pune University"}],
-      "sameAs": [
-        "https://linkedin.com/in/tejas-svpatil",
-        "https://github.com/tejassvpatil"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tejas Patil",
+        "url": "https://tejassvpatil.github.io/",
+        "jobTitle": "PhD Researcher in AI and Healthcare",
+        "email": "mailto:tpatil@ucdavis.edu",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Davis",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "affiliation": [
+          { "@type": "CollegeOrUniversity", "name": "University of California, Davis" },
+          { "@type": "Organization", "name": "UC Davis Health" }
+        ],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Pune" },
+        "sameAs": [
+          "https://www.linkedin.com/in/tejas-svpatil",
+          "https://scholar.google.com/citations?user=ULMuzloAAAAJ&hl=en",
+          "https://github.com/tejassvpatil"
+        ],
+        "knowsAbout": [
+          "Artificial intelligence in healthcare",
+          "Multimodal machine learning",
+          "Cognitive health",
+          "Human-centered computing",
+          "Digital health",
+          "Remote caregiving"
+        ]
+      }
     </script>
   </body>
 </html>
