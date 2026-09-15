@@ -144,7 +144,6 @@ nav a:hover { color: var(--link); }
 .index,
 .methods,
 .venue,
-.section-note,
 time {
   color: var(--muted);
   font-size: 0.78rem;
@@ -217,12 +216,6 @@ h1 {
   border-color: var(--link);
 }
 
-.download-button small {
-  color: var(--muted);
-  font-size: 0.64rem;
-  white-space: nowrap;
-}
-
 .section {
   padding: 82px 0;
   border-top: 1px solid var(--line);
@@ -246,8 +239,6 @@ h2 {
   line-height: 1.1;
   letter-spacing: -0.035em;
 }
-
-.section-note { margin: -22px 0 34px 58px; }
 
 .research-grid {
   display: grid;
@@ -461,7 +452,7 @@ h2 {
 }
 
 .download-card {
-  min-height: 250px;
+  min-height: 190px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -480,13 +471,6 @@ h2 {
 .download-card strong {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.2rem;
-}
-
-.download-card p {
-  margin: 12px 0 22px;
-  color: var(--body);
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.88rem;
 }
 
 .download-link {
@@ -558,7 +542,6 @@ footer {
   .download-grid { grid-template-columns: 1fr; }
   .research-grid article { min-height: auto; }
   .pub-year { grid-template-columns: 1fr; gap: 10px; }
-  .section-note { margin-left: 0; }
   .presentation-note { margin-left: 0; }
   .record summary { grid-template-columns: minmax(0, 1fr) 20px; gap: 12px; }
   .record summary time { grid-column: 1; grid-row: 2; }
